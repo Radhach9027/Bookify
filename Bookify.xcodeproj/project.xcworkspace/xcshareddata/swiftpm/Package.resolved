@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "dependencycontainer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Radhach9027/DependencyContainer",
+      "state" : {
+        "revision" : "3700abaa492a81c515dafc77c0841b0239e5645a",
+        "version" : "1.0.10"
+      }
+    },
+    {
+      "identity" : "navigatorkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Radhach9027/NavigatorKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "f09a5f668db9962b5cda41cbb0f5c244a10c62ec"
+      }
+    },
+    {
+      "identity" : "networkclient",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Radhach9027/NetworkClient",
+      "state" : {
+        "branch" : "main",
+        "revision" : "cb0358c856b39b6417b7a355f228d2241176f42f"
+      }
+    }
+  ],
+  "version" : 2
+}

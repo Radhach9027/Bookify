@@ -1,0 +1,76 @@
+{
+    "schemaVersion": "1.0",
+    "environment": "dev",
+    "services": {
+        "defaults": {
+            "scheme": "https",
+            "port": 443,
+            "timeouts": { "connect": 10, "read": 30 }
+        },
+        "services": {
+            "hotels": { "host": "api.example.com", "timeouts": { "connect": 5, "read": 20 } },
+            "auth":   { "host": "auth.example.com" },
+            "cdn":    { "scheme": "http", "host": "cdn.example.net", "port": 8080 }
+        }
+    },
+    "features": {
+        "new_checkout": true,
+        "filters_v2": true,
+        "profile_tabs": false,
+        "enable_push_optin_prompt": true
+    },
+    "experiments": {
+        "paywall_variant": "B",
+        "search_empty_state": "control"
+    },
+    "localization": {
+        "defaultLanguage": "en",
+        "supported": ["en", "te", "hi", "ta"],
+        "bundles": {
+            "en": "https://cdn.myhotels.app/loc/en.json",
+            "te": "https://cdn.myhotels.app/loc/te.json",
+            "hi": "https://cdn.myhotels.app/loc/hi.json",
+            "ta": "https://cdn.myhotels.app/loc/ta.json"
+        },
+        "fonts": {
+            "en": {
+                "regular": "https://cdn.myhotels.app/fonts/en/Inter-Regular.ttf",
+                "medium": "https://cdn.myhotels.app/fonts/en/Inter-Medium.ttf",
+                "bold": "https://cdn.myhotels.app/fonts/en/Inter-Bold.ttf"
+            },
+            "te": {
+                "regular": "https://cdn.myhotels.app/fonts/te/NotoSansTelugu-Regular.ttf",
+                "bold": "https://cdn.myhotels.app/fonts/te/NotoSansTelugu-Bold.ttf"
+            }
+        }
+    },
+    "theme": {
+        "schemaVersion": "1.1",
+        "brand": "MyHotels",
+        "cornerRadius": { "fixed": 14 },
+        "colors": {
+            "primary": "#2E7D32",
+            "onPrimary": "#FFFFFF",
+            "background": { "light": "#FFFFFF", "dark": "#000000" },
+            "onBackground": { "light": "#121212", "dark": "#EEEEEE", "alpha": 1 },
+            "surface": { "light": "#F7F7F7", "dark": "#1C1C1E" },
+            "onSurface": { "light": "#1C1C1E", "dark": "#F7F7F7" },
+            "accent": "#2962FF",
+            "success": "#2E7D32",
+            "warning": "#F9A825",
+            "error": "#D32F2F"
+        }
+    },
+    "telemetry": {
+        "vendor": "Amplitude",
+        "apiKey": "AMP_STG_XXXX",
+        "samplingRate": 0.5
+    },
+    "permissions": {
+        "requestLocationOnLaunch": true,
+        "rationaleMessages": {
+            "location": "We use your location to show nearby hotel deals and accurate prices."
+        }
+    }
+}
+

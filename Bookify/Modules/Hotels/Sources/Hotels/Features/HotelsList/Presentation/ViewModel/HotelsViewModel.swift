@@ -1,0 +1,70 @@
+//
+//  HotelsViewModel.swift
+//  Hotels
+//
+//  Created by radha chilamkurthy on 14/11/25.
+//
+
+import Foundation
+import Combine
+import BookifyDomainKit
+import DependencyContainer
+import BookifyModelKit
+import BookifyDesignSystem
+
+@MainActor
+final class HotelsViewModel: ObservableObject {
+    @Published private(set) var state: LoadState<[HotelCardProps]> = .idle
+    @Published var balance: Decimal = 12_345.67
+    var cards: [HotelCardProps] {
+        if case .loaded(let cards) = state {
+            return cards
+        } else {
+            return []
+        }
+    }
+
+    func fetchHotels() {
+        state = .loading
+        Task {
+            do {
+                let hotels = try await BookifyDomain.shared.hotelsUseCase.execute()
+                let cards = hotels.map { $0.toCardProps() }
+                state = .loaded(cards)
+            } catch {
+                state = .failed
+            }
+        }
+    }
+
+    // MARK: - User actions
+    func book(props: HotelCardProps) {
+        // TODO: navigate to booking / details
+        print("Book tapped for hotel:", props.name)
+    }
+
+    func toggleWishlist(props: HotelCardProps) {
+        // TODO: update wishlist state
+        print("Wishlist toggled for hotel:", props.name)
+    }
+}
+
+// MARK: - Mapping model → card props
+
+private extension Hotel {
+    func toCardProps() -> HotelCardProps {
+        HotelCardProps(
+            id: id.rawValue,
+            name: name,
+            city: address.city ?? "",
+            ratingText: String(format: "%.1f", review?.rating ?? 0),
+            ratingValue: review?.rating ?? 0,
+            reviewsCountText: "(\(review?.count ?? 0))",
+            priceText: "₹\(10000)",
+            description: description ?? "",
+            imageUrl: images.first?.url
+                ?? URL(string: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg")! // safe fallback
+        )
+    }
+}
+

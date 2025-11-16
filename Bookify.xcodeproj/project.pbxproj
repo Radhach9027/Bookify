@@ -1,0 +1,731 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A25090D62EC230680054C8A1 /* BookifyDomainKit in Frameworks */ = {isa = PBXBuildFile; productRef = A25090D52EC230680054C8A1 /* BookifyDomainKit */; };
+		A25E74742EBB5A6900ECED7A /* Hotels in Frameworks */ = {isa = PBXBuildFile; productRef = A25E74732EBB5A6900ECED7A /* Hotels */; };
+		A25E74782EBB5B4800ECED7A /* Bookings in Frameworks */ = {isa = PBXBuildFile; productRef = A25E74772EBB5B4800ECED7A /* Bookings */; };
+		A25E747B2EBB7D0000ECED7A /* DependencyContainer in Frameworks */ = {isa = PBXBuildFile; productRef = A25E747A2EBB7D0000ECED7A /* DependencyContainer */; };
+		A25E74FA2EBCB50900ECED7A /* BookifyModelKit in Frameworks */ = {isa = PBXBuildFile; productRef = A25E74F92EBCB50900ECED7A /* BookifyModelKit */; };
+		A25E74FD2EBCB51800ECED7A /* BookifySharedSystem in Frameworks */ = {isa = PBXBuildFile; productRef = A25E74FC2EBCB51800ECED7A /* BookifySharedSystem */; };
+		A26250D52EB8842A0091F8A1 /* BookifyDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = A26250D42EB8842A0091F8A1 /* BookifyDesignSystem */; };
+		A26250D82EB884920091F8A1 /* BookifyDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = A26250D72EB884920091F8A1 /* BookifyDesignSystem */; };
+		A2B1AA862EC70AFC0011DC0A /* NavigatorKit in Frameworks */ = {isa = PBXBuildFile; productRef = A2B1AA852EC70AFC0011DC0A /* NavigatorKit */; };
+		A2B1AAC42EC983510011DC0A /* NavigatorKit in Frameworks */ = {isa = PBXBuildFile; productRef = A2B1AAC32EC983510011DC0A /* NavigatorKit */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A26250B52EB883790091F8A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A262509F2EB883770091F8A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A26250A62EB883770091F8A1;
+			remoteInfo = Bookify;
+		};
+		A26250BF2EB883790091F8A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A262509F2EB883770091F8A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A26250A62EB883770091F8A1;
+			remoteInfo = Bookify;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A26250A72EB883770091F8A1 /* Bookify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookify.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A26250B42EB883790091F8A1 /* BookifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A26250BE2EB883790091F8A1 /* BookifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A26250E72EB888720091F8A1 /* Exceptions for "Bookify" folder in "Bookify" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Modules/Bookings,
+				Modules/Hotels,
+				Packages/BookifyAuthentication,
+				Packages/BookifyDomainKit,
+				Packages/BookifyLoggerSystem,
+				Packages/BookifyModelKit,
+				Packages/BookifySharedSystem,
+			);
+			target = A26250A62EB883770091F8A1 /* Bookify */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A26250A92EB883770091F8A1 /* Bookify */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A26250E72EB888720091F8A1 /* Exceptions for "Bookify" folder in "Bookify" target */,
+			);
+			path = Bookify;
+			sourceTree = "<group>";
+		};
+		A26250B72EB883790091F8A1 /* BookifyTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BookifyTests;
+			sourceTree = "<group>";
+		};
+		A26250C12EB883790091F8A1 /* BookifyUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BookifyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A26250A42EB883770091F8A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A25E74782EBB5B4800ECED7A /* Bookings in Frameworks */,
+				A2B1AAC42EC983510011DC0A /* NavigatorKit in Frameworks */,
+				A2B1AA862EC70AFC0011DC0A /* NavigatorKit in Frameworks */,
+				A26250D52EB8842A0091F8A1 /* BookifyDesignSystem in Frameworks */,
+				A25E74FD2EBCB51800ECED7A /* BookifySharedSystem in Frameworks */,
+				A25090D62EC230680054C8A1 /* BookifyDomainKit in Frameworks */,
+				A26250D82EB884920091F8A1 /* BookifyDesignSystem in Frameworks */,
+				A25E747B2EBB7D0000ECED7A /* DependencyContainer in Frameworks */,
+				A25E74742EBB5A6900ECED7A /* Hotels in Frameworks */,
+				A25E74FA2EBCB50900ECED7A /* BookifyModelKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A26250B12EB883790091F8A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A26250BB2EB883790091F8A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A262509E2EB883770091F8A1 = {
+			isa = PBXGroup;
+			children = (
+				A26250A92EB883770091F8A1 /* Bookify */,
+				A26250B72EB883790091F8A1 /* BookifyTests */,
+				A26250C12EB883790091F8A1 /* BookifyUITests */,
+				A26250A82EB883770091F8A1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A26250A82EB883770091F8A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A26250A72EB883770091F8A1 /* Bookify.app */,
+				A26250B42EB883790091F8A1 /* BookifyTests.xctest */,
+				A26250BE2EB883790091F8A1 /* BookifyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A26250A62EB883770091F8A1 /* Bookify */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A26250C82EB883790091F8A1 /* Build configuration list for PBXNativeTarget "Bookify" */;
+			buildPhases = (
+				A26250A32EB883770091F8A1 /* Sources */,
+				A26250A42EB883770091F8A1 /* Frameworks */,
+				A26250A52EB883770091F8A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A26250A92EB883770091F8A1 /* Bookify */,
+			);
+			name = Bookify;
+			packageProductDependencies = (
+				A26250D42EB8842A0091F8A1 /* BookifyDesignSystem */,
+				A26250D72EB884920091F8A1 /* BookifyDesignSystem */,
+				A25E74732EBB5A6900ECED7A /* Hotels */,
+				A25E74772EBB5B4800ECED7A /* Bookings */,
+				A25E747A2EBB7D0000ECED7A /* DependencyContainer */,
+				A25E74F92EBCB50900ECED7A /* BookifyModelKit */,
+				A25E74FC2EBCB51800ECED7A /* BookifySharedSystem */,
+				A25090D52EC230680054C8A1 /* BookifyDomainKit */,
+				A2B1AA852EC70AFC0011DC0A /* NavigatorKit */,
+				A2B1AAC32EC983510011DC0A /* NavigatorKit */,
+			);
+			productName = Bookify;
+			productReference = A26250A72EB883770091F8A1 /* Bookify.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A26250B32EB883790091F8A1 /* BookifyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A26250CB2EB883790091F8A1 /* Build configuration list for PBXNativeTarget "BookifyTests" */;
+			buildPhases = (
+				A26250B02EB883790091F8A1 /* Sources */,
+				A26250B12EB883790091F8A1 /* Frameworks */,
+				A26250B22EB883790091F8A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A26250B62EB883790091F8A1 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A26250B72EB883790091F8A1 /* BookifyTests */,
+			);
+			name = BookifyTests;
+			packageProductDependencies = (
+			);
+			productName = BookifyTests;
+			productReference = A26250B42EB883790091F8A1 /* BookifyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A26250BD2EB883790091F8A1 /* BookifyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A26250CE2EB883790091F8A1 /* Build configuration list for PBXNativeTarget "BookifyUITests" */;
+			buildPhases = (
+				A26250BA2EB883790091F8A1 /* Sources */,
+				A26250BB2EB883790091F8A1 /* Frameworks */,
+				A26250BC2EB883790091F8A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A26250C02EB883790091F8A1 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A26250C12EB883790091F8A1 /* BookifyUITests */,
+			);
+			name = BookifyUITests;
+			packageProductDependencies = (
+			);
+			productName = BookifyUITests;
+			productReference = A26250BE2EB883790091F8A1 /* BookifyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A262509F2EB883770091F8A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					A26250A62EB883770091F8A1 = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+					A26250B32EB883790091F8A1 = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = A26250A62EB883770091F8A1;
+					};
+					A26250BD2EB883790091F8A1 = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = A26250A62EB883770091F8A1;
+					};
+				};
+			};
+			buildConfigurationList = A26250A22EB883770091F8A1 /* Build configuration list for PBXProject "Bookify" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A262509E2EB883770091F8A1;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A25E74722EBB5A6900ECED7A /* XCLocalSwiftPackageReference "Bookify/Modules/Hotels" */,
+				A25E74762EBB5B4800ECED7A /* XCLocalSwiftPackageReference "Bookify/Modules/Bookings" */,
+				A25E74792EBB7D0000ECED7A /* XCRemoteSwiftPackageReference "DependencyContainer" */,
+				A25E74F82EBCB50900ECED7A /* XCLocalSwiftPackageReference "Bookify/Packages/BookifyModelKit" */,
+				A25E74FB2EBCB51800ECED7A /* XCLocalSwiftPackageReference "Bookify/Packages/BookifySharedSystem" */,
+				A25090D42EC230680054C8A1 /* XCLocalSwiftPackageReference "Bookify/Packages/BookifyDomainKit" */,
+				A2B1AAC22EC983510011DC0A /* XCRemoteSwiftPackageReference "NavigatorKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A26250A82EB883770091F8A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A26250A62EB883770091F8A1 /* Bookify */,
+				A26250B32EB883790091F8A1 /* BookifyTests */,
+				A26250BD2EB883790091F8A1 /* BookifyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A26250A52EB883770091F8A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A26250B22EB883790091F8A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A26250BC2EB883790091F8A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A26250A32EB883770091F8A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A26250B02EB883790091F8A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A26250BA2EB883790091F8A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A26250B62EB883790091F8A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A26250A62EB883770091F8A1 /* Bookify */;
+			targetProxy = A26250B52EB883790091F8A1 /* PBXContainerItemProxy */;
+		};
+		A26250C02EB883790091F8A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A26250A62EB883770091F8A1 /* Bookify */;
+			targetProxy = A26250BF2EB883790091F8A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A26250C62EB883790091F8A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5D3F6TU62C;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A26250C72EB883790091F8A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5D3F6TU62C;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A26250C92EB883790091F8A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5D3F6TU62C;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.radhachilamkurthy.bookify;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A26250CA2EB883790091F8A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5D3F6TU62C;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.radhachilamkurthy.bookify;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A26250CC2EB883790091F8A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5D3F6TU62C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = connectify.BookifyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bookify.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Bookify";
+			};
+			name = Debug;
+		};
+		A26250CD2EB883790091F8A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5D3F6TU62C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = connectify.BookifyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bookify.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Bookify";
+			};
+			name = Release;
+		};
+		A26250CF2EB883790091F8A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5D3F6TU62C;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = connectify.BookifyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Bookify;
+			};
+			name = Debug;
+		};
+		A26250D02EB883790091F8A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5D3F6TU62C;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = connectify.BookifyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Bookify;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A26250A22EB883770091F8A1 /* Build configuration list for PBXProject "Bookify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A26250C62EB883790091F8A1 /* Debug */,
+				A26250C72EB883790091F8A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A26250C82EB883790091F8A1 /* Build configuration list for PBXNativeTarget "Bookify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A26250C92EB883790091F8A1 /* Debug */,
+				A26250CA2EB883790091F8A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A26250CB2EB883790091F8A1 /* Build configuration list for PBXNativeTarget "BookifyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A26250CC2EB883790091F8A1 /* Debug */,
+				A26250CD2EB883790091F8A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A26250CE2EB883790091F8A1 /* Build configuration list for PBXNativeTarget "BookifyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A26250CF2EB883790091F8A1 /* Debug */,
+				A26250D02EB883790091F8A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A25090D42EC230680054C8A1 /* XCLocalSwiftPackageReference "Bookify/Packages/BookifyDomainKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Bookify/Packages/BookifyDomainKit;
+		};
+		A25E74722EBB5A6900ECED7A /* XCLocalSwiftPackageReference "Bookify/Modules/Hotels" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Bookify/Modules/Hotels;
+		};
+		A25E74762EBB5B4800ECED7A /* XCLocalSwiftPackageReference "Bookify/Modules/Bookings" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Bookify/Modules/Bookings;
+		};
+		A25E74F82EBCB50900ECED7A /* XCLocalSwiftPackageReference "Bookify/Packages/BookifyModelKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Bookify/Packages/BookifyModelKit;
+		};
+		A25E74FB2EBCB51800ECED7A /* XCLocalSwiftPackageReference "Bookify/Packages/BookifySharedSystem" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Bookify/Packages/BookifySharedSystem;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A25E74792EBB7D0000ECED7A /* XCRemoteSwiftPackageReference "DependencyContainer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Radhach9027/DependencyContainer";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
+		A2B1AAC22EC983510011DC0A /* XCRemoteSwiftPackageReference "NavigatorKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Radhach9027/NavigatorKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A25090D52EC230680054C8A1 /* BookifyDomainKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BookifyDomainKit;
+		};
+		A25E74732EBB5A6900ECED7A /* Hotels */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Hotels;
+		};
+		A25E74772EBB5B4800ECED7A /* Bookings */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Bookings;
+		};
+		A25E747A2EBB7D0000ECED7A /* DependencyContainer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A25E74792EBB7D0000ECED7A /* XCRemoteSwiftPackageReference "DependencyContainer" */;
+			productName = DependencyContainer;
+		};
+		A25E74F92EBCB50900ECED7A /* BookifyModelKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BookifyModelKit;
+		};
+		A25E74FC2EBCB51800ECED7A /* BookifySharedSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BookifySharedSystem;
+		};
+		A26250D42EB8842A0091F8A1 /* BookifyDesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BookifyDesignSystem;
+		};
+		A26250D72EB884920091F8A1 /* BookifyDesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BookifyDesignSystem;
+		};
+		A2B1AA852EC70AFC0011DC0A /* NavigatorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NavigatorKit;
+		};
+		A2B1AAC32EC983510011DC0A /* NavigatorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2B1AAC22EC983510011DC0A /* XCRemoteSwiftPackageReference "NavigatorKit" */;
+			productName = NavigatorKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A262509F2EB883770091F8A1 /* Project object */;
+}

@@ -1,0 +1,513 @@
+[
+    {
+        "id": { "rawValue": "HTL_HYD_0001" },
+        "name": "Skyline Heights Hitech City",
+        "brand": "Skyline",
+        "description": "Premium business hotel in Hitech City with skyline views and modern amenities.",
+        "address": {
+            "line1": "Plot 21, Tech Park Road",
+            "line2": "Near Cyber Towers",
+            "city": "Hyderabad",
+            "state": "TS",
+            "postalCode": "500081",
+            "countryCode": "IN"
+        },
+        "locality": {
+            "countryCode": "IN",
+            "stateCode": "TS",
+            "city": "Hyderabad",
+            "area": "Hitech City",
+            "slug": "hyderabad-hitech-city"
+        },
+        "geo": { "lat": 17.4435, "lon": 78.3772, "geohash": "ts9t1f" },
+        "timeZoneID": "Asia/Kolkata",
+        "contact": {
+            "phone": "+91-40-66006600",
+            "email": "stay@skylineheights.example",
+            "website": "https://skylineheights.example/hitechcity"
+        },
+        "stars": 5,
+        "review": {
+            "rating": 4.6,
+            "scale": 5,
+            "count": 1894,
+            "histogram": { "1": 30, "2": 55, "3": 250, "4": 720, "5": 839 },
+            "recentSnippet": "Excellent for business stays, great breakfast spread.",
+            "topPositiveReviewID": "RVW_HYD_10001",
+            "topNegativeReviewID": null
+        },
+        "reviews": [
+            {
+                "id": "RVW_HYD_10001",
+                "title": "Perfect for business travel",
+                "message": "Rooms are spacious, Wi-Fi is fast, and the location is unbeatable.",
+                "rating": 5,
+                "scale": 5,
+                "sentiment": "positive",
+                "languageCode": "en",
+                "createdAt": "2025-09-10T09:30:00Z",
+                "stayDate": "2025-08-28",
+                "author": { "id": "USR_HYD_501", "displayName": "Karthik", "countryCode": "IN" },
+                "media": [
+                    {
+                        "url": "https://cdn.example/hotels/HTL_HYD_0001/reviews/rvw_10001_1.jpg",
+                        "width": 1600,
+                        "height": 1066,
+                        "caption": "View from the executive floor"
+                    }
+                ],
+                "helpfulCount": 18,
+                "hotelReply": "Thank you for choosing us for your business trip!",
+                "source": {
+                    "provider": "Internal",
+                    "fetchedAt": "2025-09-10T10:00:00Z",
+                    "version": null,
+                    "etag": null
+                },
+                "tags": ["wifi", "breakfast", "location"]
+            }
+        ],
+        "amenitySet": ["wifi", "pool", "gym", "parking", "restaurant", "ac", "tv", "elevator"],
+        "amenitiesRaw": ["airport_pickup", "executive_lounge"],
+        "facilities": ["parking", "gym", "spa", "business_center"],
+        "languages": ["en", "hi", "te"],
+        "images": [
+            {
+                "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Taj%20Falaknuma%20Palace.jpg",
+                "width": 1920,
+                "height": 1080,
+                "caption": "Hotel exterior at night",
+                "kind": "exterior"
+            },
+            {
+                "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Taj%20Falaknuma%20Palace.jpg",
+                "width": 1920,
+                "height": 1280,
+                "caption": "Lobby and reception",
+                "kind": "interior"
+            }
+        ],
+        "rooms": [],
+        "policies": {
+            "checkIn": { "fromTime": "14:00", "untilTime": "23:00" },
+            "checkOut": { "fromTime": "06:00", "untilTime": "11:00" },
+            "childPolicy": "Children of any age are welcome.",
+            "petPolicy": "Pets are not allowed.",
+            "smokePolicy": "Non-smoking property.",
+            "minCheckInAge": 18,
+            "accessibility": {
+                "wheelchairAccessible": true,
+                "elevatorAvailable": true,
+                "accessibleRooms": true,
+                "notes": null
+            }
+        },
+        "propertyType": "hotel",
+        "availability": {
+            "context": {
+                "checkIn": "2025-12-01",
+                "checkOut": "2025-12-03",
+                "rooms": 1,
+                "adults": 2,
+                "children": 0
+            },
+            "fetchedAt": "2025-11-10T09:00:00Z"
+        },
+        "distanceMeters": 500.0,
+        "tags": ["business", "it_hub"],
+        "provider": { "providerCode": "Internal", "providerHotelID": "HTL_HYD_0001_INT" },
+        "source": {
+            "provider": "Internal",
+            "fetchedAt": "2025-11-10T09:00:00Z",
+            "version": "1.0.0",
+            "etag": "W/\"hyd001\""
+        },
+        "createdAt": "2024-05-15T10:00:00Z",
+        "updatedAt": "2025-10-01T08:30:00Z"
+    },
+    {
+        "id": { "rawValue": "HTL_HYD_0002" },
+        "name": "Lakeview Residency Hussain Sagar",
+        "brand": "Lakeview",
+        "description": "Upscale hotel overlooking Hussain Sagar Lake with terrace dining and lakefront rooms.",
+        "address": {
+            "line1": "Road No. 1, Necklace Road",
+            "line2": "Near People’s Plaza",
+            "city": "Hyderabad",
+            "state": "TS",
+            "postalCode": "500082",
+            "countryCode": "IN"
+        },
+        "locality": {
+            "countryCode": "IN",
+            "stateCode": "TS",
+            "city": "Hyderabad",
+            "area": "Necklace Road",
+            "slug": "hyderabad-necklace-road"
+        },
+        "geo": { "lat": 17.4239, "lon": 78.4738, "geohash": "ts9t0x" },
+        "timeZoneID": "Asia/Kolkata",
+        "contact": {
+            "phone": "+91-40-66110000",
+            "email": "reservations@lakeviewhyd.example",
+            "website": "https://lakeviewhyd.example/hussainsagar"
+        },
+        "stars": 5,
+        "review": {
+            "rating": 4.5,
+            "scale": 5,
+            "count": 1560,
+            "histogram": { "1": 20, "2": 50, "3": 260, "4": 600, "5": 630 },
+            "recentSnippet": "Amazing lake view and rooftop restaurant.",
+            "topPositiveReviewID": "RVW_HYD_20001",
+            "topNegativeReviewID": null
+        },
+        "reviews": [],
+        "amenitySet": ["wifi", "pool", "gym", "parking", "restaurant", "bar", "ac", "tv"],
+        "amenitiesRaw": ["lake_view_rooms", "rooftop_restaurant"],
+        "facilities": ["parking", "spa", "valet_parking"],
+        "languages": ["en", "hi", "te"],
+        "images": [
+            {
+                "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Taj%20Falaknuma%20Palace.jpg",
+                "width": 1920,
+                "height": 1080,
+                "caption": "Hotel exterior at night",
+                "kind": "exterior"
+            },
+            {
+                "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Taj%20Falaknuma%20Palace.jpg",
+                "width": 1920,
+                "height": 1280,
+                "caption": "Lobby and reception",
+                "kind": "interior"
+            }
+        ],
+        "rooms": [],
+        "policies": {
+            "checkIn": { "fromTime": "14:00", "untilTime": "22:00" },
+            "checkOut": { "fromTime": "06:00", "untilTime": "12:00" },
+            "childPolicy": "Extra bed charges may apply for children above 12 years.",
+            "petPolicy": "Pets are not allowed.",
+            "smokePolicy": "Designated smoking areas only.",
+            "minCheckInAge": 18,
+            "accessibility": {
+                "wheelchairAccessible": true,
+                "elevatorAvailable": true,
+                "accessibleRooms": null,
+                "notes": null
+            }
+        },
+        "propertyType": "hotel",
+        "availability": {
+            "context": {
+                "checkIn": "2025-12-10",
+                "checkOut": "2025-12-12",
+                "rooms": 1,
+                "adults": 2,
+                "children": 1
+            },
+            "fetchedAt": "2025-11-10T09:05:00Z"
+        },
+        "distanceMeters": 800.0,
+        "tags": ["lake_view", "romantic"],
+        "provider": { "providerCode": "Internal", "providerHotelID": "HTL_HYD_0002_INT" },
+        "source": {
+            "provider": "Internal",
+            "fetchedAt": "2025-11-10T09:05:00Z",
+            "version": "1.0.0",
+            "etag": "W/\"hyd002\""
+        },
+        "createdAt": "2024-07-01T09:00:00Z",
+        "updatedAt": "2025-09-20T11:15:00Z"
+    },
+    {
+        "id": { "rawValue": "HTL_HYD_0003" },
+        "name": "Pearl Plaza Convention Hotel",
+        "brand": "Pearl Hotels",
+        "description": "Large convention hotel near Gachibowli with multiple banquet halls and modern rooms.",
+        "address": {
+            "line1": "Survey No. 45, Financial District Road",
+            "line2": "Near ORR Junction",
+            "city": "Hyderabad",
+            "state": "TS",
+            "postalCode": "500032",
+            "countryCode": "IN"
+        },
+        "locality": {
+            "countryCode": "IN",
+            "stateCode": "TS",
+            "city": "Hyderabad",
+            "area": "Financial District",
+            "slug": "hyderabad-financial-district"
+        },
+        "geo": { "lat": 17.4034, "lon": 78.3560, "geohash": "ts9szq" },
+        "timeZoneID": "Asia/Kolkata",
+        "contact": {
+            "phone": "+91-40-66223344",
+            "email": "events@pearlplaza.example",
+            "website": "https://pearlplaza.example/convention"
+        },
+        "stars": 4,
+        "review": {
+            "rating": 4.2,
+            "scale": 5,
+            "count": 980,
+            "histogram": { "1": 15, "2": 40, "3": 180, "4": 410, "5": 335 },
+            "recentSnippet": "Good for conferences and big family events.",
+            "topPositiveReviewID": "RVW_HYD_30001",
+            "topNegativeReviewID": null
+        },
+        "reviews": [],
+        "amenitySet": ["wifi", "parking", "restaurant", "ac", "tv", "elevator"],
+        "amenitiesRaw": ["banquet_hall", "conference_rooms"],
+        "facilities": ["parking", "business_center"],
+        "languages": ["en", "hi", "te"],
+        "images": [
+            {
+                "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Taj%20Falaknuma%20Palace.jpg",
+                "width": 1920,
+                "height": 1080,
+                "caption": "Hotel exterior at night",
+                "kind": "exterior"
+            },
+            {
+                "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Taj%20Falaknuma%20Palace.jpg",
+                "width": 1920,
+                "height": 1280,
+                "caption": "Lobby and reception",
+                "kind": "interior"
+            }
+        ],
+        "rooms": [],
+        "policies": {
+            "checkIn": { "fromTime": "13:00", "untilTime": "22:00" },
+            "checkOut": { "fromTime": "06:00", "untilTime": "11:00" },
+            "childPolicy": "Children under 6 stay free when using existing beds.",
+            "petPolicy": "Pets are not allowed.",
+            "smokePolicy": "Non-smoking rooms with designated smoking zones.",
+            "minCheckInAge": 18,
+            "accessibility": {
+                "wheelchairAccessible": true,
+                "elevatorAvailable": true,
+                "accessibleRooms": null,
+                "notes": null
+            }
+        },
+        "propertyType": "hotel",
+        "availability": {
+            "context": {
+                "checkIn": "2025-11-25",
+                "checkOut": "2025-11-27",
+                "rooms": 2,
+                "adults": 4,
+                "children": 0
+            },
+            "fetchedAt": "2025-11-10T09:10:00Z"
+        },
+        "distanceMeters": 1500.0,
+        "tags": ["convention", "events"],
+        "provider": { "providerCode": "Internal", "providerHotelID": "HTL_HYD_0003_INT" },
+        "source": {
+            "provider": "Internal",
+            "fetchedAt": "2025-11-10T09:10:00Z",
+            "version": "1.0.0",
+            "etag": "W/\"hyd003\""
+        },
+        "createdAt": "2024-03-20T08:00:00Z",
+        "updatedAt": "2025-09-05T10:45:00Z"
+    },
+    {
+        "id": { "rawValue": "HTL_HYD_0004" },
+        "name": "Old City Heritage Inn",
+        "brand": "Heritage Stays",
+        "description": "Boutique heritage stay near Charminar with traditional decor and curated local experiences.",
+        "address": {
+            "line1": "Charminar Road",
+            "line2": "Near Laad Bazaar",
+            "city": "Hyderabad",
+            "state": "TS",
+            "postalCode": "500002",
+            "countryCode": "IN"
+        },
+        "locality": {
+            "countryCode": "IN",
+            "stateCode": "TS",
+            "city": "Hyderabad",
+            "area": "Old City",
+            "slug": "hyderabad-old-city"
+        },
+        "geo": { "lat": 17.3616, "lon": 78.4747, "geohash": "ts9skp" },
+        "timeZoneID": "Asia/Kolkata",
+        "contact": {
+            "phone": "+91-40-66778899",
+            "email": "hello@oldcityheritage.example",
+            "website": "https://oldcityheritage.example/charminar"
+        },
+        "stars": 4,
+        "review": {
+            "rating": 4.4,
+            "scale": 5,
+            "count": 620,
+            "histogram": { "1": 10, "2": 25, "3": 90, "4": 260, "5": 235 },
+            "recentSnippet": "Beautiful heritage interiors and walkable to Charminar.",
+            "topPositiveReviewID": "RVW_HYD_40001",
+            "topNegativeReviewID": null
+        },
+        "reviews": [],
+        "amenitySet": ["wifi", "parking", "restaurant", "ac", "tv"],
+        "amenitiesRaw": ["heritage_rooms", "guided_walks"],
+        "facilities": ["parking"],
+        "languages": ["en", "hi", "te"],
+        "images": [
+            {
+                "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Taj%20Falaknuma%20Palace.jpg",
+                "width": 1920,
+                "height": 1080,
+                "caption": "Hotel exterior at night",
+                "kind": "exterior"
+            },
+            {
+                "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Taj%20Falaknuma%20Palace.jpg",
+                "width": 1920,
+                "height": 1280,
+                "caption": "Lobby and reception",
+                "kind": "interior"
+            }
+        ],
+        "rooms": [],
+        "policies": {
+            "checkIn": { "fromTime": "13:00", "untilTime": "21:00" },
+            "checkOut": { "fromTime": "06:00", "untilTime": "11:00" },
+            "childPolicy": "Families are welcome; narrow streets may not be suitable for large vehicles.",
+            "petPolicy": "Pets are not allowed.",
+            "smokePolicy": "Non-smoking property.",
+            "minCheckInAge": 18,
+            "accessibility": {
+                "wheelchairAccessible": false,
+                "elevatorAvailable": false,
+                "accessibleRooms": null,
+                "notes": "Heritage structure with stairs and narrow corridors."
+            }
+        },
+        "propertyType": "hotel",
+        "availability": {
+            "context": {
+                "checkIn": "2025-11-18",
+                "checkOut": "2025-11-19",
+                "rooms": 1,
+                "adults": 2,
+                "children": 0
+            },
+            "fetchedAt": "2025-11-10T09:15:00Z"
+        },
+        "distanceMeters": 300.0,
+        "tags": ["heritage", "old_city"],
+        "provider": { "providerCode": "Internal", "providerHotelID": "HTL_HYD_0004_INT" },
+        "source": {
+            "provider": "Internal",
+            "fetchedAt": "2025-11-10T09:15:00Z",
+            "version": "1.0.0",
+            "etag": "W/\"hyd004\""
+        },
+        "createdAt": "2023-12-10T07:00:00Z",
+        "updatedAt": "2025-08-30T09:30:00Z"
+    },
+    {
+        "id": { "rawValue": "HTL_HYD_0005" },
+        "name": "Banjara Hills Cityscape Hotel",
+        "brand": "Cityscape",
+        "description": "Stylish urban hotel in Banjara Hills with rooftop pool and city views.",
+        "address": {
+            "line1": "Road No. 12, Banjara Hills",
+            "line2": null,
+            "city": "Hyderabad",
+            "state": "TS",
+            "postalCode": "500034",
+            "countryCode": "IN"
+        },
+        "locality": {
+            "countryCode": "IN",
+            "stateCode": "TS",
+            "city": "Hyderabad",
+            "area": "Banjara Hills",
+            "slug": "hyderabad-banjara-hills"
+        },
+        "geo": { "lat": 17.4164, "lon": 78.4386, "geohash": "ts9t0b" },
+        "timeZoneID": "Asia/Kolkata",
+        "contact": {
+            "phone": "+91-40-66990011",
+            "email": "frontdesk@cityscapehyd.example",
+            "website": "https://cityscapehyd.example/banjarahills"
+        },
+        "stars": 5,
+        "review": {
+            "rating": 4.7,
+            "scale": 5,
+            "count": 2105,
+            "histogram": { "1": 25, "2": 40, "3": 210, "4": 700, "5": 1130 },
+            "recentSnippet": "Fantastic rooftop pool and very central location.",
+            "topPositiveReviewID": "RVW_HYD_50001",
+            "topNegativeReviewID": null
+        },
+        "reviews": [],
+        "amenitySet": ["wifi", "pool", "gym", "parking", "restaurant", "bar", "ac", "tv", "elevator"],
+        "amenitiesRaw": ["rooftop_pool", "city_view_rooms"],
+        "facilities": ["parking", "spa", "valet_parking", "business_center"],
+        "languages": ["en", "hi", "te"],
+        "images": [
+            {
+                "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Taj%20Falaknuma%20Palace.jpg",
+                "width": 1920,
+                "height": 1080,
+                "caption": "Hotel exterior at night",
+                "kind": "exterior"
+            },
+            {
+                "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Taj%20Falaknuma%20Palace.jpg",
+                "width": 1920,
+                "height": 1280,
+                "caption": "Lobby and reception",
+                "kind": "interior"
+            }
+        ],
+        "rooms": [],
+        "policies": {
+            "checkIn": { "fromTime": "14:00", "untilTime": "23:00" },
+            "checkOut": { "fromTime": "06:00", "untilTime": "12:00" },
+            "childPolicy": "Children are welcome; extra beds available on request.",
+            "petPolicy": "Pets are not allowed.",
+            "smokePolicy": "Non-smoking rooms with smoking floors available.",
+            "minCheckInAge": 18,
+            "accessibility": {
+                "wheelchairAccessible": true,
+                "elevatorAvailable": true,
+                "accessibleRooms": true,
+                "notes": null
+            }
+        },
+        "propertyType": "hotel",
+        "availability": {
+            "context": {
+                "checkIn": "2025-12-15",
+                "checkOut": "2025-12-18",
+                "rooms": 1,
+                "adults": 2,
+                "children": 0
+            },
+            "fetchedAt": "2025-11-10T09:20:00Z"
+        },
+        "distanceMeters": 900.0,
+        "tags": ["premium", "city_view"],
+        "provider": { "providerCode": "Internal", "providerHotelID": "HTL_HYD_0005_INT" },
+        "source": {
+            "provider": "Internal",
+            "fetchedAt": "2025-11-10T09:20:00Z",
+            "version": "1.0.0",
+            "etag": "W/\"hyd005\""
+        },
+        "createdAt": "2024-02-01T08:30:00Z",
+        "updatedAt": "2025-09-25T12:00:00Z"
+    }
+]
+ 
