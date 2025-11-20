@@ -49,7 +49,7 @@ public struct HotelCarouselOrganism: View {
                             ForEach(cards) { card in
                                 HotelCard(
                                     props: card,
-                                    width: 290,
+                                    width: 295,
                                     onBook: {},
                                     onWishlist: {},
                                     onShare: {}
