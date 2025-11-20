@@ -61,6 +61,7 @@ private extension Hotel {
             ratingValue: review?.rating ?? 0,
             reviewsCountText: "(\(review?.count ?? 0))",
             priceText: "₹\(10000)",
+            originalPrice: "₹\(12000)",
             description: description ?? "",
             imageUrl: images.first?.url
                 ?? URL(string: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg")! // safe fallback

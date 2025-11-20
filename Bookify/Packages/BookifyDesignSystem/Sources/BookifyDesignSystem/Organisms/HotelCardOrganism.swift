@@ -15,6 +15,7 @@ public struct HotelCardProps: Identifiable, Equatable {
     public var ratingValue: Double
     public var reviewsCountText: String
     public var priceText: String
+    public var originalPrice: String
     public var description: String
     public var imageUrl: URL
     
@@ -26,6 +27,7 @@ public struct HotelCardProps: Identifiable, Equatable {
         ratingValue: Double,
         reviewsCountText: String,
         priceText: String,
+        originalPrice: String,
         description: String,
         imageUrl: URL
     ) {
@@ -36,6 +38,7 @@ public struct HotelCardProps: Identifiable, Equatable {
         self.ratingValue = ratingValue;
         self.reviewsCountText = reviewsCountText;
         self.priceText = priceText;
+        self.originalPrice = originalPrice;
         self.description = description;
         self.imageUrl = imageUrl
     }
@@ -49,7 +52,8 @@ public struct HotelCardProps: Identifiable, Equatable {
         lhs.reviewsCountText == rhs.reviewsCountText &&
         lhs.priceText == rhs.priceText &&
         lhs.description == rhs.description &&
-        lhs.imageUrl == rhs.imageUrl
+        lhs.imageUrl == rhs.imageUrl &&
+        lhs.originalPrice == rhs.originalPrice
     }
 }
 

@@ -9,16 +9,34 @@ import SwiftUI
 
 public struct MPriceBlock: View {
     let priceText: String
-    
-    public init(priceText: String) {
+    let originalPriceText: String?
+
+    public init(
+        priceText: String,
+        originalPriceText: String? = nil
+    ) {
         self.priceText = priceText
+        self.originalPriceText = originalPriceText
     }
-    
+
     public var body: some View {
         VStack(alignment: .trailing, spacing: 2) {
-            AText(priceText, style: .subheadline, color: .primary).font(.caption)
+            if let original = originalPriceText {
+                VStack(spacing: 4) {
+                    if #available(iOS 16.0, *) {
+                        AText(original, style: .caption, color: .secondary)
+                            .strikethrough(true, color: .secondary)
+                    } else {
+                        // MARK: TODO
+                    }
+                    AText(priceText, style: .subheadline, color: .primary)
+                }
+            } else {
+                AText(priceText, style: .subheadline, color: .primary)
+            }
             AText("per night", style: .caption, color: .secondary)
         }
     }
 }
+
 
