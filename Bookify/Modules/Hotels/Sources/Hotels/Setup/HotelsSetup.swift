@@ -16,7 +16,7 @@ public struct HotelsSetup {
         registerRoutes()
     }
 
-    public static func registerRoutes() {
+    private static func registerRoutes() {
         RouteRegistrar.registerAll(features: [HotelRoutes.self])
     }
 }
