@@ -57,18 +57,21 @@ public struct HotelCard: View {
     let props: HotelCardProps
     let onBook: () -> Void
     let onWishlist: () -> Void
+    let onShare: () -> Void
     let width: CGFloat?
 
     public init(
         props: HotelCardProps,
         width: CGFloat? = nil,
         onBook: @escaping () -> Void,
-        onWishlist: @escaping () -> Void
+        onWishlist: @escaping () -> Void,
+        onShare: @escaping () -> Void
     ) {
         self.props = props
         self.width = width
         self.onBook = onBook
         self.onWishlist = onWishlist
+        self.onShare = onShare
     }
     
     public var body: some View {
@@ -109,10 +112,11 @@ public struct HotelCard: View {
 
             VStack(alignment: .leading, spacing: 10) {
                 HStack(spacing: 8) {
-                    ARatingStars(rating: props.ratingValue)
-                    Text(props.reviewsCountText)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+                    ARatingStars(
+                        rating: props.ratingValue,
+                        max: 5,
+                        reviewsCountText: props.reviewsCountText
+                    )
                     Spacer()
                     MPriceBlock(priceText: props.priceText)
                 }
@@ -121,22 +125,11 @@ public struct HotelCard: View {
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
 
-                HStack {
-                    Button(action: onBook) {
-                        Text("Book Now")
-                            .font(.subheadline.weight(.semibold))
-                            .frame(maxWidth: .infinity)
-                    }
-                    .buttonStyle(.borderedProminent)
-
-                    Button(action: onWishlist) {
-                        AIcon("heart", size: .medium)
-                            .padding(10)
-                    }
-                    .buttonStyle(.bordered)
-                    .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                    .accessibilityLabel("Add to wishlist")
-                }
+                MHotelCardActions(
+                    onBook: onBook,
+                    onWishlist: onWishlist,
+                    onShare: onShare
+                )
             }
             .padding(14)
         }

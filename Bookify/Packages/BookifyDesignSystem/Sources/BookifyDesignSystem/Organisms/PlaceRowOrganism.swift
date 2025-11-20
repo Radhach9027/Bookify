@@ -52,7 +52,7 @@ public struct PlaceRowOrganism: View {
                         HStack(spacing: 6) {
                             Label(props.categoryText, systemImage: "mappin.and.ellipse").labelStyle(.titleAndIcon).font(.caption).foregroundStyle(.secondary)
                             Text("•").foregroundStyle(.secondary)
-                            ARatingStars(rating: props.ratingValue)
+                            ARatingStars(rating: props.ratingValue, max: 5, reviewsCountText: props.reviewsCountText)
                             Text(props.reviewsCountText).font(.caption).foregroundStyle(.secondary)
                         }
                     }

@@ -18,10 +18,16 @@ struct RouteSwitchHost: View {
             RootShellView()
                 .transition(.opacity.combined(with: .scale))
         case .launchError(let msg):
-            LaunchErrorView(message: msg) {
-                Task { await nav.start() }
-            }
+            LaunchErrorView(
+                errorTitle: "Setup Failed",
+                errorImage: "exclamationmark.triangle",
+                message: msg,
+                onRetry: {
+                    Task {
+                        await nav.start()
+                    }
+                }
+            )
         }
     }
 }
-

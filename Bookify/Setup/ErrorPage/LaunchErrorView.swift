@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct LaunchErrorView: View {
+    let errorTitle: String
+    let errorImage: String
     let message: String
     let onRetry: () -> Void
+
     var body: some View {
         VStack(spacing: 16) {
-            Image(systemName: "exclamationmark.triangle.fill")
+            Image(systemName: errorImage)
                 .font(.system(size: 44)).foregroundStyle(.yellow)
-            Text("Setup Failed").font(.title3).bold()
+            Text(errorTitle).font(.title3).bold()
             Text(message).foregroundStyle(.secondary)
                 .multilineTextAlignment(.center).padding(.horizontal)
             Button("Retry", action: onRetry).buttonStyle(.borderedProminent)

@@ -53,6 +53,8 @@ extension MainTab {
     private func errorView(onRetry: @escaping () -> Void = {}) -> AnyView {
         AnyView(
             LaunchErrorView(
+                errorTitle: "Setup Failed",
+                errorImage: "exclamationmark.triangle",
                 message: "Couldn't load \(title) Module",
                 onRetry: onRetry
             )

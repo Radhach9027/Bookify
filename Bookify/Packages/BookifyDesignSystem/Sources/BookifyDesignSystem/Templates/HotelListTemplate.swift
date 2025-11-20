@@ -11,15 +11,18 @@ public struct HotelListTemplate: View {
     public let hotels: [HotelCardProps]
     public let onBook: (HotelCardProps) -> Void
     public let onWishlist: (HotelCardProps) -> Void
+    public let onShare: (HotelCardProps) -> Void
 
     public init(
         hotels: [HotelCardProps],
         onBook: @escaping (HotelCardProps) -> Void = { _ in },
-        onWishlist: @escaping (HotelCardProps) -> Void = { _ in }
+        onWishlist: @escaping (HotelCardProps) -> Void = { _ in },
+        onShare: @escaping (HotelCardProps) -> Void = { _ in }
     ) {
         self.hotels = hotels
         self.onBook = onBook
         self.onWishlist = onWishlist
+        self.onShare = onShare
     }
 
     public var body: some View {
@@ -29,7 +32,8 @@ public struct HotelListTemplate: View {
                     HotelCard(
                         props: props,
                         onBook: { onBook(props) },
-                        onWishlist: { onWishlist(props) }
+                        onWishlist: { onWishlist(props) },
+                        onShare: {onShare(props)}
                     )
                 }
             }

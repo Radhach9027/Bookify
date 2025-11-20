@@ -47,7 +47,13 @@ public struct HotelCarouselOrganism: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 16) {
                             ForEach(cards) { card in
-                                HotelCard(props: card, width: 280, onBook: {}, onWishlist: {})
+                                HotelCard(
+                                    props: card,
+                                    width: 290,
+                                    onBook: {},
+                                    onWishlist: {},
+                                    onShare: {}
+                                )
                             }
                         }.padding(.horizontal, 16)
                     }.scrollTargetBehavior(.paging)
