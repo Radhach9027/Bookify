@@ -3,22 +3,4 @@
    uuid = "A88D3EDA-739F-4ECE-8AB9-56A200A4861A"
    type = "1"
    version = "2.0">
-   <Breakpoints>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "31DFE09B-2048-4820-BFE8-2C4FAFB9193E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bookify/Packages/BookifyModelKit/Sources/Models/Hotels/Hotel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "init(id:name:brand:description:address:locality:geo:timeZoneID:contact:stars:review:reviews:amenitySet:amenitiesRaw:facilities:languages:images:rooms:policies:propertyType:availability:distanceMeters:tags:provider:source:createdAt:updatedAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-   </Breakpoints>
 </Bucket>

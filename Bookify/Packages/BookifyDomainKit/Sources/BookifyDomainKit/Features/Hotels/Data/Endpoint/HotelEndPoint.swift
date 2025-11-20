@@ -24,7 +24,7 @@ extension HotelEndPoint: NetworkRequestProtocol {
     var urlComponents: URLComponents? {
         switch self {
         case .fetch:
-            return Self.makeComponents(path: "v1/search", query: ["city": "BLR"])
+            return Self.makeComponents(path: "v1/fetch", query: ["city": "HYD"])
         }
     }
 

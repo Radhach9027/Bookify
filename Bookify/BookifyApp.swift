@@ -28,7 +28,3 @@ struct BookifyApp: App {
         }
     }
 }
-
-
-
-

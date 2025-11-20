@@ -28,7 +28,8 @@ struct SplashView: View {
         }
         .onAppear {
             withAnimation(.easeInOut(duration: 0.9).repeatForever(autoreverses: true)) {
-                glow.toggle(); scale = 1.02
+                glow.toggle();
+                scale = 1.02
             }
         }
     }

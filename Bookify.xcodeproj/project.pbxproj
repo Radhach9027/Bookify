@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2420F722ECEF48A002E09FA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A2420F672ECEF48A002E09FA /* README.md */; };
 		A25090D62EC230680054C8A1 /* BookifyDomainKit in Frameworks */ = {isa = PBXBuildFile; productRef = A25090D52EC230680054C8A1 /* BookifyDomainKit */; };
 		A25E74742EBB5A6900ECED7A /* Hotels in Frameworks */ = {isa = PBXBuildFile; productRef = A25E74732EBB5A6900ECED7A /* Hotels */; };
 		A25E74782EBB5B4800ECED7A /* Bookings in Frameworks */ = {isa = PBXBuildFile; productRef = A25E74772EBB5B4800ECED7A /* Bookings */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A2420F672ECEF48A002E09FA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A26250A72EB883770091F8A1 /* Bookify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A26250B42EB883790091F8A1 /* BookifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A26250BE2EB883790091F8A1 /* BookifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 		A262509E2EB883770091F8A1 = {
 			isa = PBXGroup;
 			children = (
+				A2420F672ECEF48A002E09FA /* README.md */,
 				A26250A92EB883770091F8A1 /* Bookify */,
 				A26250B72EB883790091F8A1 /* BookifyTests */,
 				A26250C12EB883790091F8A1 /* BookifyUITests */,
@@ -273,6 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2420F722ECEF48A002E09FA /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

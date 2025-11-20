@@ -52,13 +52,3 @@ struct RootShellView: View {
         .appTopBar(currentTopBarConfig)
     }
 }
-
-
-
-
-
-
-
-
-
-
