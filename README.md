@@ -10,21 +10,61 @@ The entire system is built on top of a clean, scalable, domain‑oriented, multi
 Bookify follows a **Modular Monolith + SPM Packages** approach:
 
 ```
-App (Bookify)
+Bookify (iOS App)
 │
-├── BookifyDesignSystem
-├── BookifyModelKit
-├── BookifyDomainKit
-├── BookifySharedSystem
-├── NavigatorKit
-├── NetworkClient
-├── BookifyAuthentication
-└── Feature Modules
-      ├── Hotels
-      ├── Flights
-      ├── Buses
-      ├── Trains
-      └── Events
+├── App
+│   ├── BookifyApp (@main)
+│   │   - SwiftUI entry point.
+│   │   - Creates AppNavigator + NavigationCoordinator.
+│   │   - Hosts NavigationHost / RouteSwitchHost.
+│   │   - Kicks off appNav.start() on launch.
+│   │
+│   ├── AppNavigator
+│   │   - Owns AppRoute: .splash, .shell, .launchError(String).
+│   │   - On start():
+│   │       • Shows splash for a minimum delay.
+│   │       • Calls BookifySetup.bootstrap().
+│   │       • On success → routes to .shell (RootShellView).
+│   │       • On failure → routes to .launchError.
+│   │
+│   ├── BookifySetup (Composition Root)
+│   │   - Loads AppConfig from AppConfiguration.json.
+│   │   - Seeds DIContainer with:
+│   │       • AppConfig (singleton)
+│   │       • EventBusType (singleton EventBus)
+│   │   - Registers feature modules:
+│   │       • HotelsSetup.register()
+│   │       • BookingsSetup.register()
+│   │       • (later) FlightsSetup, BusesSetup, TrainsSetup, EventsSetup…
+│   │   - Wraps failures as SetupError (e.g. hotelsRegistrationFailed).
+│   │
+│   └── RootShellView
+│       - Main tabbed shell after setup succeeds.
+│       - Uses MainTab enum to host feature entry views.
+│       - Uses AppTabBar + appTopBar (from BookifyDesignSystem).
+│       - Injects NavigationCoordinator into feature roots.
+│
+├── Packages
+│   ├── BookifyDesignSystem      # UI components, theming, typography
+│   ├── BookifyModelKit          # Core domain models (Hotels, Flights, etc.)
+│   ├── BookifyDomainKit         # Use cases, business rules, domain services
+│   ├── BookifySharedSystem      # Shared utilities, config, logging, analytics
+│   ├── NavigatorKit             # Navigation abstractions, deep links, flows
+│   ├── NetworkClient            # API client, HTTP layer, interceptors
+│   └── BookifyAuthentication    # Auth flows, tokens, session management
+│
+└── FeatureModules
+    ├── Hotels                   # Hotels feature (screens, view models, wiring)
+    │   └── HotelsSetup.register()
+    │       - Registers routes in NavigatorKit.
+    │       - Binds Hotels use cases + repositories into DIContainer.
+    │       - Wires Hotels entry view into MainTab.hotels.resolvedView().
+    │
+    ├── Flights                  # (future) Flights feature + FlightsSetup.register()
+    ├── Buses                    # (future) Buses feature + BusesSetup.register()
+    ├── Trains                   # (future) Trains feature + TrainsSetup.register()
+    └── Events                   # (future) Events feature + EventsSetup.register()
+
 ```
 
 Each feature is isolated with:
