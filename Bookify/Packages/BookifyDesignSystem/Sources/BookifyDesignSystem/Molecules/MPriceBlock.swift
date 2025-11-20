@@ -24,15 +24,15 @@ public struct MPriceBlock: View {
             if let original = originalPriceText {
                 VStack(spacing: 4) {
                     if #available(iOS 16.0, *) {
-                        AText(original, style: .caption, color: .secondary)
+                        AText(original, style: .title3Bold, color: .secondary)
                             .strikethrough(true, color: .secondary)
                     } else {
                         // MARK: TODO
                     }
-                    AText(priceText, style: .subheadline, color: .primary)
+                    AText(priceText, style: .title3Bold, color: .primary)
                 }
             } else {
-                AText(priceText, style: .subheadline, color: .primary)
+                AText(priceText, style: .body, color: .primary)
             }
             AText("per night", style: .caption, color: .secondary)
         }

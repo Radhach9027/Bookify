@@ -18,8 +18,11 @@ public struct AText: View {
     let color: Color?
     
     public init(_ text: String, style: Style, color: Color? = nil) {
-        self.text = text; self.style = style; self.color = color
+        self.text = text;
+        self.style = style;
+        self.color = color
     }
+    
     public var body: some View {
         Text(text)
             .font(font)

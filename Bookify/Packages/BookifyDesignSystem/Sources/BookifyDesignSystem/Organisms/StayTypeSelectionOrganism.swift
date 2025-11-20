@@ -62,8 +62,15 @@ public struct StayTypeSelectionOrganism: View {
         VStack(spacing: 8) {
             header
             if props.type == .hourly { hourly } else { nightly }
-            Button { send(.search) } label: { Text("Search").font(.headline).frame(maxWidth: .infinity).padding(.vertical, 14) }
-                .buttonStyle(.borderedProminent).tint(.blue).clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+            APrimaryButton(
+                title: "Search",
+                height: 35,
+                isFullWidth: true,
+                font: .headline.weight(.bold),
+                action: {
+                    send(.search)
+                }
+            )
         }
     }
     
