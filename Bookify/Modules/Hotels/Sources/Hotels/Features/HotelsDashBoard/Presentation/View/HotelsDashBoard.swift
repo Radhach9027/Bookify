@@ -46,6 +46,3 @@ struct HotelsDashBoard: View {
         coordinator.navigate(path: "hotelList", presentation: .push)
     }
 }
-
-
-

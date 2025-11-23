@@ -64,8 +64,18 @@ public struct PlaceRowOrganism: View {
                     .frame(height: 140).clipped().clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
                 Text(props.summary).font(.subheadline).foregroundStyle(.secondary).lineLimit(2)
                 HStack(spacing: 10) {
-                    Button(action: onDirections) { Label("Directions", systemImage: "arrow.triangle.turn.up.right.circle.fill").font(.subheadline.weight(.semibold)) }.buttonStyle(.bordered)
-                    Button(action: onBook) { Text("Book Now").font(.subheadline.weight(.semibold)).frame(maxWidth: .infinity) }.buttonStyle(.borderedProminent)
+                    Button(action: onDirections) {
+                        Label(
+                            "Directions",
+                            systemImage: "arrow.triangle.turn.up.right.circle.fill")
+                        .font(.subheadline.weight(.semibold))
+                    }.buttonStyle(.bordered)
+                    
+                    Button(action: onBook) {
+                        Text("Book Now")
+                            .font(.subheadline.weight(.semibold))
+                            .frame(maxWidth: .infinity)
+                    }.buttonStyle(.borderedProminent)
                 }
             }
         }

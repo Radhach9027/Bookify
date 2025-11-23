@@ -15,19 +15,13 @@ struct HotelList: View {
         Group {
             switch viewModel.state {
             case .idle, .loading:
-                ProgressView()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                ALoadingView()
 
             case .failed:
-                VStack(spacing: 8) {
-                    Text("Couldn’t load hotels")
-                        .font(.subheadline.weight(.semibold))
-                    Button("Retry") {
-                        viewModel.fetchHotels()
-                    }
-                    .buttonStyle(.borderedProminent)
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                ARetryView(
+                    title: "Couldn’t load hotels",
+                    onRetry: viewModel.fetchHotels
+                )
 
             case .loaded:
                 HotelListTemplate(
