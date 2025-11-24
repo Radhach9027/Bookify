@@ -17,4 +17,22 @@ public struct AppConfig: Codable, Equatable {
     public let theme: ThemeConfig
     public let telemetry: TelemetryConfig
     public let permissions: PermissionsConfig?
+    public let buildInfo: AppBuildInfo?
+}
+
+public extension AppConfig {
+    func with(buildInfo: AppBuildInfo) -> AppConfig {
+        AppConfig(
+            schemaVersion: schemaVersion,
+            environment: environment,
+            services: services,
+            features: features,
+            experiments: experiments,
+            localization: localization,
+            theme: theme,
+            telemetry: telemetry,
+            permissions: permissions,
+            buildInfo: buildInfo
+        )
+    }
 }

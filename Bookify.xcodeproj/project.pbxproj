@@ -55,6 +55,7 @@
 				Packages/BookifyLoggerSystem,
 				Packages/BookifyModelKit,
 				Packages/BookifySharedSystem,
+				Packages/DevTookKit,
 			);
 			target = A26250A62EB883770091F8A1 /* Bookify */;
 		};
