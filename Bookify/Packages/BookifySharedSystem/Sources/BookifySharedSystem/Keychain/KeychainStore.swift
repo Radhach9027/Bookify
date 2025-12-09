@@ -9,7 +9,6 @@ import Foundation
 @preconcurrency import Security
 
 public final class KeychainStore<T: Codable & Sendable> {
-    
     public struct Options: Sendable {
         public enum Accessibility: Sendable {
             case afterFirstUnlockThisDeviceOnly
@@ -38,7 +37,7 @@ public final class KeychainStore<T: Codable & Sendable> {
         /// Whether item can sync via iCloud Keychain. Default: false
         public var synchronizable: Bool = false
         /// Optional access group if using Keychain Sharing
-        public var accessGroup: String? = nil
+        public var accessGroup: String?
 
         public init(accessibility: Accessibility = .afterFirstUnlockThisDeviceOnly,
                     synchronizable: Bool = false,
@@ -143,4 +142,3 @@ public final class KeychainStore<T: Codable & Sendable> {
 
     private func namespaced(_ key: String) -> String { "\(account).\(key)" }
 }
-

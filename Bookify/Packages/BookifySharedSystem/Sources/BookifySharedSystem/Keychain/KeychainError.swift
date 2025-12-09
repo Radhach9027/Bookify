@@ -18,7 +18,7 @@ public enum KeychainError: Error, LocalizedError {
         switch self {
         case .itemNotFound: return "Keychain item not found."
         case .duplicateItem: return "Keychain item already exists."
-        case .unexpectedStatus(let s): return "Keychain unexpected status: \(s)."
+        case let .unexpectedStatus(s): return "Keychain unexpected status: \(s)."
         case .encodingFailed: return "Failed to encode value."
         case .decodingFailed: return "Failed to decode value."
         }

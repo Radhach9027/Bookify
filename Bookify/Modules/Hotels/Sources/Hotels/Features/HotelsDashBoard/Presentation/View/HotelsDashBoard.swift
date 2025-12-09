@@ -4,16 +4,15 @@
 //
 //  Created by radha chilamkurthy on 06/11/25.
 //
-import SwiftUI
-import NavigatorKit
 import BookifyDesignSystem
 import NavigatorKit
+import SwiftUI
 
 struct HotelsDashBoard: View {
     @StateObject private var hotelsVM = HotelsDashboardViewModel()
     @State private var selectionProps = StayTypeSelectionProps()
     @EnvironmentObject private var coordinator: NavigationCoordinator
-    
+
     var body: some View {
         HotelDashBoardTemplate {
             StayTypeSelectionOrganism(props: $selectionProps) { action in
@@ -41,8 +40,8 @@ struct HotelsDashBoard: View {
             // If you want to kick nearby as well, do it here
         }
     }
-    
+
     private func navigateToHotelList() {
-        coordinator.navigate(path: "hotelList", presentation: .push)
+        coordinator.navigate(path: HotelRouteSource.list.rawValue, presentation: .push)
     }
 }
