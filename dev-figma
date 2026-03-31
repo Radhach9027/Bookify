@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+SUB=${1:-help}; shift || true
+BASE=${FIGMA_MCP_BASE:-"https://mcp.figma.example.com"}
+TOKEN=${FIGMA_TOKEN:-""}
+
+case "$SUB" in
+  pull)
+    if [[ $# -lt 2 ]]; then echo "Usage: ./dev figma pull <JIRAKEY> <NODE_ID>"; exit 1; fi
+    KEY=$1; NODE=$2
+    mkdir -p "Docs/Design/${KEY}"
+    if [[ -z "$TOKEN" ]]; then
+      echo "FIGMA_TOKEN missing; creating placeholder files."
+      echo "Placeholder for Figma node ${NODE}" > "Docs/Design/${KEY}/README.md"
+      exit 0
+    fi
+    echo "Pulling Figma node ${NODE} -> Docs/Design/${KEY} (placeholder call)"
+    # curl -H "Authorization: Bearer $TOKEN" "${BASE}/nodes/${NODE}" -o "Docs/Design/${KEY}/${NODE}.json"
+    ;;
+  *) echo "Usage: ./dev figma pull <JIRAKEY> <NODE_ID>"; exit 1;;
+esac

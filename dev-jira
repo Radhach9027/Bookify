@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+set -euo pipefail
+SUB=${1:-help}; shift || true
+BASE=${JIRA_MCP_BASE:-"https://mcp.jira.example.com"}
+TOKEN=${JIRA_TOKEN:-""}
+
+function ensure() {
+  if [[ -z "$TOKEN" ]]; then
+    echo "Warning: missing JIRA_TOKEN; skipping $1"
+    exit 0
+  fi
+}
+
+case "$SUB" in
+  comment)
+    KEY=$1; TEXT=$2
+    ensure "comment"
+    echo "Commenting on ${KEY}: ${TEXT}"
+    # curl -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
+    #   -d "{\"key\":\"${KEY}\",\"text\":\"${TEXT}\"}" \
+    #   "${BASE}/comment"
+    ;;
+  transition)
+    KEY=$1; STATE=$2
+    ensure "transition"
+    echo "Transition ${KEY} -> ${STATE}"
+    # curl -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
+    #   -d "{\"key\":\"${KEY}\",\"state\":\"${STATE}\"}" \
+    #   "${BASE}/transition"
+    ;;
+  *) echo "Usage: ./dev jira [comment|transition]"; exit 1;;
+esac

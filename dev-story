@@ -1,0 +1,226 @@
+#!/usr/bin/env bash
+set -euo pipefail
+SUB=${1:-help}; shift || true
+
+function kebab() {
+  echo "$1" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g' | sed -E 's/^-|-$//g'
+}
+
+function start() {
+  if [[ $# -lt 2 ]]; then
+    echo "Usage: ./dev story start <JIRAKEY> \"Title\" --module <Module> --feature <Feature>"
+    exit 1
+  fi
+  KEY=$1; TITLE=$2; shift 2
+  MODULE=""; FEATURE=""
+  while [[ $# -gt 0 ]]; do
+    case $1 in
+      --module) MODULE="$2"; shift 2;;
+      --feature) FEATURE="$2"; shift 2;;
+      *) shift;;
+    esac
+  done
+  if [[ -z "$MODULE" || -z "$FEATURE" ]]; then
+    echo "Missing --module or --feature"
+    exit 1
+  fi
+
+  SLUG="$(kebab "$TITLE")"
+  BRANCH="feature/${KEY}-${SLUG}"
+  git checkout -b "$BRANCH"
+
+  # Story doc
+  mkdir -p "Docs/Stories"
+  STORY_DOC="Docs/Stories/${KEY}-${SLUG}.md"
+  if [[ ! -f "$STORY_DOC" ]]; then
+    cat > "$STORY_DOC" <<EOF
+# ${KEY} — ${TITLE}
+
+- Module: ${MODULE}
+- Feature: ${FEATURE}
+- JIRA: ${KEY}
+- Design: (Figma node IDs here)
+- Acceptance Criteria:
+- Decisions:
+- Follow-ups:
+EOF
+    git add "$STORY_DOC"
+  fi
+
+  # Scaffold feature
+  BASE="Sources/${MODULE}/Features/${FEATURE}/Presentation"
+  mkdir -p "${BASE}/View" "${BASE}/ViewModel"
+  VIEW_FILE="${BASE}/View/${FEATURE}View.swift"
+  VM_FILE="${BASE}/ViewModel/${FEATURE}ViewModel.swift"
+
+  if [[ ! -f "$VIEW_FILE" ]]; then
+    cat > "$VIEW_FILE" <<SWIFT
+import SwiftUI
+import BookifyDesignSystem
+import NavigatorKit
+
+public struct ${FEATURE}View: View {
+    @StateObject private var vm = ${FEATURE}ViewModel()
+
+    public init() {}
+
+    public var body: some View {
+        content
+            .navigationTitle("${FEATURE}")
+            .task { await vm.onAppear() }
+    }
+
+    @ViewBuilder private var content: some View {
+        switch vm.state {
+        case .idle, .loading:
+            ProgressView().frame(maxWidth: .infinity, maxHeight: .infinity)
+        case .failed:
+            Text("Something went wrong").foregroundStyle(.secondary)
+        case .loaded(let cards):
+            ScrollView {
+                LazyVStack(spacing: 12) {
+                    ForEach(cards) { card in
+                        HotelCard(
+                            props: card,
+                            onBook: {},
+                            onWishlist: {},
+                            onShare: {}
+                        )
+                    }
+                }.padding()
+            }
+        }
+    }
+}
+SWIFT
+    git add "$VIEW_FILE"
+  fi
+
+  if [[ ! -f "$VM_FILE" ]]; then
+    cat > "$VM_FILE" <<SWIFT
+import Foundation
+import Combine
+import BookifyDomainKit
+import DependencyContainer
+import BookifyDesignSystem
+
+@MainActor
+public final class ${FEATURE}ViewModel: ObservableObject {
+    @Published public private(set) var state: LoadState<[HotelCardProps]> = .idle
+
+    public init() {}
+
+    public func onAppear() async {
+        guard case .idle = state else { return }
+        await fetch()
+    }
+
+    public func fetch() async {
+        state = .loading
+        do {
+            let hotels = try await BookifyDomain.shared.hotelsUseCase.execute()
+            let cards = hotels.map { $0.toCardProps() }
+            state = .loaded(cards)
+        } catch {
+            state = .failed
+        }
+    }
+}
+SWIFT
+    git add "$VM_FILE"
+  fi
+
+  # Routes and setup placeholders
+  mkdir -p "Sources/${MODULE}/Routes" "Sources/${MODULE}/Setup"
+  ROUTESRC="Sources/${MODULE}/Routes/${MODULE}RouteSource.swift"
+  if [[ ! -s "$ROUTESRC" ]]; then
+    cat > "$ROUTESRC" <<SWIFT
+import Foundation
+import NavigatorKit
+import SwiftUI
+
+public enum ${MODULE}Route: Route {
+    case ${kebab "$FEATURE" | tr '-' '_'} // placeholder
+}
+SWIFT
+    git add "$ROUTESRC"
+  fi
+
+  ROUTES="Sources/${MODULE}/Setup/${MODULE}Routes.swift"
+  if [[ ! -s "$ROUTES" ]]; then
+    cat > "$ROUTES" <<SWIFT
+import NavigatorKit
+import SwiftUI
+
+public struct ${MODULE}Routes {
+    public static func register(with coordinator: NavigationCoordinator) {
+        // TODO: map routes to views
+    }
+}
+SWIFT
+    git add "$ROUTES"
+  fi
+
+  SETUP="Sources/${MODULE}/Setup/${MODULE}Setup.swift"
+  if [[ ! -s "$SETUP" ]]; then
+    cat > "$SETUP" <<SWIFT
+import DependencyContainer
+
+public enum ${MODULE}Setup {
+    public static func registerDependencies() {
+        // TODO: register module-specific services
+    }
+}
+SWIFT
+    git add "$SETUP"
+  fi
+
+  # Basic test
+  TEST_FILE="Tests/${MODULE}/${FEATURE}/${FEATURE}ViewModelTests.swift"
+  mkdir -p "$(dirname "$TEST_FILE")"
+  if [[ ! -f "$TEST_FILE" ]]; then
+    cat > "$TEST_FILE" <<SWIFT
+import Testing
+@testable import ${MODULE}
+
+@Suite("${FEATURE} ViewModel")
+struct ${FEATURE}ViewModelTests {
+    @Test func initialStateIsIdle() async throws {
+        let vm = ${FEATURE}ViewModel()
+        #expect(vm.state == .idle)
+    }
+}
+SWIFT
+    git add "$TEST_FILE"
+  fi
+
+  git commit -m "feat(${MODULE}): ${KEY} scaffold ${FEATURE}"
+  ./dev-jira transition "$KEY" "In Progress" || true
+  ./dev-jira comment "$KEY" "Scaffolded ${FEATURE} and docs ${STORY_DOC}" || true
+}
+
+function pr() {
+  if [[ $# -lt 1 ]]; then echo "Usage: ./dev story pr <JIRAKEY>"; exit 1; fi
+  KEY=$1
+  BRANCH=$(git branch --show-current)
+  gh pr create --fill --title "[${KEY}] ${BRANCH#*/}" || true
+  PR_URL=$(gh pr view --json url -q .url || echo "")
+  [[ -n "$PR_URL" ]] && ./dev-jira comment "$KEY" "PR opened: ${PR_URL}" || true
+  ./dev-jira transition "$KEY" "In Review" || true
+}
+
+function done() {
+  if [[ $# -lt 1 ]]; then echo "Usage: ./dev story done <JIRAKEY>"; exit 1; fi
+  KEY=$1
+  ./dev-jira transition "$KEY" "Done" || true
+  CUR=$(git branch --show-current)
+  git checkout main && git pull
+  git branch -d "$CUR" || true
+}
+
+case "$SUB" in
+  start) start "$@";;
+  pr)    pr "$@";;
+  done)  done "$@";;
+  *) echo "Usage: ./dev story [start|pr|done]"; exit 1;;
+esac

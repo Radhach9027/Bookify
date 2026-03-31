@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+CMD=${1:-help}; shift || true
+case "$CMD" in
+  story) exec ./dev-story "$@";;
+  figma) exec ./dev-figma "$@";;
+  jira)  exec ./dev-jira "$@";;
+  fmt)   swiftformat .;;
+  lint)  swiftlint;;
+  test)  swift test --parallel ;;
+  help|*) cat <<'EOF'
+Usage: ./dev <command> [args]
+
+Commands:
+  story   start/pr/done workflow for a JIRA story
+  figma   pull design specs via MCP (placeholder)
+  jira    comment/transition helper via MCP (placeholder)
+  fmt     run SwiftFormat
+  lint    run SwiftLint
+  test    run Swift tests (parallel)
+
+Examples:
+  ./dev story start HJ-123 "Hotels: dashboard list" --module Hotels --feature HotelsDashBoard
+  ./dev story pr HJ-123
+  ./dev story done HJ-123
+EOF
+  ;;
+esac
