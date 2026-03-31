@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  PaymentPolicy.swift
 //  BookifyModelKit
 //
 //  Created by radha chilamkurthy on 05/11/25.
@@ -12,8 +12,8 @@ public enum PaymentMethod: String, Codable, Sendable { case prepay, payAtHotel, 
 public struct PaymentPolicy: Hashable, Codable, Sendable {
     public var method: PaymentMethod
     public var requiresCardGuarantee: Bool
-    public var prepayPercent: Int?          // e.g., 20% now
-    public var holdAmount: Money?           // pre-auth hold
+    public var prepayPercent: Int? // e.g., 20% now
+    public var holdAmount: Money? // pre-auth hold
     public var notes: String?
     public init(
         method: PaymentMethod,
@@ -22,10 +22,10 @@ public struct PaymentPolicy: Hashable, Codable, Sendable {
         holdAmount: Money? = nil,
         notes: String? = nil
     ) {
-        self.method = method;
+        self.method = method
         self.requiresCardGuarantee = requiresCardGuarantee
-        self.prepayPercent = prepayPercent;
-        self.holdAmount = holdAmount;
+        self.prepayPercent = prepayPercent
+        self.holdAmount = holdAmount
         self.notes = notes
     }
 }

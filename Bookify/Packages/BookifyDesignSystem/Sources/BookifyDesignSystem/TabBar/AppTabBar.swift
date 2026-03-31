@@ -1,5 +1,5 @@
 //
-//  CustomTabBar.swift
+//  AppTabBar.swift
 //  MyHotels
 //
 //  Created by radha chilamkurthy on 23/10/25.
@@ -22,10 +22,9 @@ public struct TabSpec: Identifiable {
         self.id = id.description
         self.title = title
         self.systemImage = systemImage
-        self.build = { AnyView(content()) }
+        build = { AnyView(content()) }
     }
 }
-
 
 public struct AppTabBar: View {
     @Binding var selection: String
@@ -33,9 +32,9 @@ public struct AppTabBar: View {
 
     public init(
         selection: Binding<String>,
-        specs: [TabSpec],
+        specs: [TabSpec]
     ) {
-        self._selection = selection
+        _selection = selection
         self.specs = specs
     }
 
@@ -52,4 +51,3 @@ public struct AppTabBar: View {
         }
     }
 }
-

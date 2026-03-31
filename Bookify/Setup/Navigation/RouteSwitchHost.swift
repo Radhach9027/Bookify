@@ -1,5 +1,5 @@
 //
-//  NavigationHost.swift
+//  RouteSwitchHost.swift
 //  Bookify
 //
 //  Created by radha chilamkurthy on 07/11/25.
@@ -17,7 +17,7 @@ struct RouteSwitchHost: View {
         case .shell:
             RootShellView()
                 .transition(.opacity.combined(with: .scale))
-        case .launchError(let msg):
+        case let .launchError(msg):
             LaunchErrorView(
                 errorTitle: "Setup Failed",
                 errorImage: "exclamationmark.triangle",

@@ -15,23 +15,23 @@ public struct HotelCarouselOrganism: View {
     let state: LoadState<[HotelCardProps]>
     let onRetry: () -> Void
     let onAppear: () -> Void
-                            
+
     public init(
         state: LoadState<[HotelCardProps]>,
         onRetry: @escaping () -> Void,
         onAppear: @escaping () -> Void
     ) {
-        self.state = state;
-        self.onRetry = onRetry;
+        self.state = state
+        self.onRetry = onRetry
         self.onAppear = onAppear
     }
-    
+
     public var body: some View {
         Group {
             switch state {
             case .idle, .loading:
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 16) { ForEach(0..<3, id: \.self) { _ in
+                    HStack(spacing: 16) { ForEach(0 ..< 3, id: \.self) { _ in
                         AShimmerHotelCard()
                     }}
                     .padding(.horizontal, 16)
@@ -42,7 +42,7 @@ public struct HotelCarouselOrganism: View {
                     AText("Failed to load hotels", style: .subheadline, color: .secondary)
                     Button("Retry", action: onRetry).buttonStyle(.bordered).padding(.top, 6)
                 }.frame(maxWidth: .infinity)
-            case .loaded(let cards):
+            case let .loaded(cards):
                 if #available(iOS 17.0, *) {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 16) {

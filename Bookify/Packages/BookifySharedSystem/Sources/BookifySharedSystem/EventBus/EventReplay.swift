@@ -5,8 +5,8 @@
 //  Created by radha chilamkurthy on 07/11/25.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 @propertyWrapper
 public final class EventReplay<E: AppEvent> {
@@ -17,6 +17,7 @@ public final class EventReplay<E: AppEvent> {
     public var wrappedValue: E? {
         subject.value
     }
+
     public var projectedValue: AnyPublisher<E, Never> {
         subject.compactMap { $0 }.eraseToAnyPublisher()
     }
@@ -24,7 +25,7 @@ public final class EventReplay<E: AppEvent> {
     public init(bus: EventBusType, seed: E? = nil) {
         self.bus = bus
         subject.send(seed)
-        self.cancellable = bus.publisher(E.self)
+        cancellable = bus.publisher(E.self)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in self?.subject.send($0) }
     }

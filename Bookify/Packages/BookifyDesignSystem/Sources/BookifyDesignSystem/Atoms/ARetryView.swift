@@ -33,4 +33,3 @@ public struct ARetryView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
-

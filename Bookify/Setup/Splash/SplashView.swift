@@ -14,7 +14,7 @@ struct SplashView: View {
         ZStack {
             LinearGradient(colors: [.black, .black.opacity(0.86)],
                            startPoint: .topLeading, endPoint: .bottomTrailing)
-            .ignoresSafeArea()
+                .ignoresSafeArea()
             VStack(spacing: 12) {
                 Image(systemName: "building.2.crop.circle.fill")
                     .resizable().scaledToFit().frame(width: 96, height: 96)
@@ -28,7 +28,7 @@ struct SplashView: View {
         }
         .onAppear {
             withAnimation(.easeInOut(duration: 0.9).repeatForever(autoreverses: true)) {
-                glow.toggle();
+                glow.toggle()
                 scale = 1.02
             }
         }

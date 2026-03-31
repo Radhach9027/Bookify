@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  StayContext.swift
 //  BookifyModelKit
 //
 //  Created by radha chilamkurthy on 05/11/25.
@@ -20,10 +20,10 @@ public struct StayContext: Hashable, Codable, Sendable {
         adults: Int = 2,
         children: Int = 0
     ) {
-        self.checkIn = checkIn;
+        self.checkIn = checkIn
         self.checkOut = checkOut
-        self.rooms = rooms;
-        self.adults = adults;
+        self.rooms = rooms
+        self.adults = adults
         self.children = children
     }
 }
@@ -32,7 +32,7 @@ public struct HotelAvailability: Hashable, Codable, Sendable {
     public var context: StayContext
     public var fetchedAt: String
     public init(context: StayContext, fetchedAt: String = .init()) {
-        self.context = context;
+        self.context = context
         self.fetchedAt = fetchedAt
     }
 }

@@ -13,13 +13,13 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(path: "../BookifyDomainKit")
+        .package(path: "../BookifyDomainKit"),
     ],
     targets: [
         .target(
             name: "Hotels",
             dependencies: [
-                .product(name: "BookifyDomainKit", package: "BookifyDomainKit")
+                .product(name: "BookifyDomainKit", package: "BookifyDomainKit"),
             ],
             path: "Sources/Hotels"
         ),

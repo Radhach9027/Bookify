@@ -21,7 +21,7 @@ public struct AAsyncImage: View {
                 ProgressView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
 
-            case .success(let image):
+            case let .success(image):
                 image
                     .resizable()
                     .scaledToFill()
@@ -41,4 +41,3 @@ public struct AAsyncImage: View {
         .clipped()
     }
 }
-

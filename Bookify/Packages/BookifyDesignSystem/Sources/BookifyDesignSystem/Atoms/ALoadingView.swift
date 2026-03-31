@@ -12,10 +12,10 @@ public struct ALoadingView: View {
         case centered
         case tinted(Color)
     }
-    
+
     private let style: Style
     private let message: String?
-    
+
     public init(
         style: Style = .centered,
         message: String? = nil
@@ -23,11 +23,11 @@ public struct ALoadingView: View {
         self.style = style
         self.message = message
     }
-    
+
     public var body: some View {
         VStack(spacing: 8) {
             progress
-            
+
             if let message {
                 Text(message)
                     .font(.caption)
@@ -38,16 +38,15 @@ public struct ALoadingView: View {
         .accessibilityElement(children: .combine)
         .accessibilityLabel(message ?? "Loading")
     }
-    
+
     @ViewBuilder
     private var progress: some View {
         switch style {
         case .centered:
             ProgressView()
-        case .tinted(let color):
+        case let .tinted(color):
             ProgressView()
                 .tint(color)
         }
     }
 }
-

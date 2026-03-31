@@ -9,9 +9,9 @@ import SwiftUI
 
 public struct DevToolsDebugPanel: View {
     @State private var selectedTab: Tab = .debugInfo
-    
+
     public init() {}
-    
+
     public var body: some View {
         NavigationView {
             VStack(spacing: 0) {
@@ -22,15 +22,15 @@ public struct DevToolsDebugPanel: View {
                 }
                 .pickerStyle(.segmented)
                 .padding()
-                
+
                 // Tab content
                 Group {
                     switch selectedTab {
-                    case .debugInfo:       DebugInfoView()
-                    case .environment:     EnvironmentView()
-                    case .featureFlags:    FeatureFlagsView()
-                    case .crashLogs:       CrashLogsView()
-                    case .network:         NetworkInspectorView()
+                    case .debugInfo: DebugInfoView()
+                    case .environment: EnvironmentView()
+                    case .featureFlags: FeatureFlagsView()
+                    case .crashLogs: CrashLogsView()
+                    case .network: NetworkInspectorView()
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -44,7 +44,7 @@ public struct DevToolsDebugPanel: View {
 extension DevToolsDebugPanel {
     enum Tab: CaseIterable {
         case debugInfo, environment, featureFlags, crashLogs, network
-        
+
         var title: String {
             switch self {
             case .debugInfo: return "Debug"

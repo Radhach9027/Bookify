@@ -41,7 +41,8 @@ public final class KeychainStore<T: Codable & Sendable> {
 
         public init(accessibility: Accessibility = .afterFirstUnlockThisDeviceOnly,
                     synchronizable: Bool = false,
-                    accessGroup: String? = nil) {
+                    accessGroup: String? = nil)
+        {
             self.accessibility = accessibility
             self.synchronizable = synchronizable
             self.accessGroup = accessGroup
@@ -74,7 +75,7 @@ public final class KeychainStore<T: Codable & Sendable> {
         query[kSecValueData as String] = data
         query[kSecAttrAccessible as String] = options.accessibility.cfString
         if options.synchronizable { query[kSecAttrSynchronizable as String] = kCFBooleanTrue }
-        if let ag = options.accessGroup { query[kSecAttrAccessGroup as String] = ag }
+        if let accessGroup = options.accessGroup { query[kSecAttrAccessGroup as String] = accessGroup }
 
         let status = SecItemAdd(query as CFDictionary, nil)
         guard status == errSecSuccess else { throw KeychainError.unexpectedStatus(status) }
@@ -86,7 +87,7 @@ public final class KeychainStore<T: Codable & Sendable> {
         query[kSecReturnData as String] = true
         query[kSecMatchLimit as String] = kSecMatchLimitOne
         if options.synchronizable { query[kSecAttrSynchronizable as String] = kSecAttrSynchronizableAny }
-        if let ag = options.accessGroup { query[kSecAttrAccessGroup as String] = ag }
+        if let accessGroup = options.accessGroup { query[kSecAttrAccessGroup as String] = accessGroup }
 
         var item: CFTypeRef?
         let status = SecItemCopyMatching(query as CFDictionary, &item)
@@ -95,7 +96,9 @@ public final class KeychainStore<T: Codable & Sendable> {
         case errSecItemNotFound:
             return nil
         case errSecSuccess:
-            guard let data = item as? Data, let value = try? decoder.decode(T.self, from: data) else {
+            guard let data = item as? Data,
+                  let value = try? decoder.decode(T.self, from: data)
+            else {
                 throw KeychainError.decodingFailed
             }
             return value
@@ -132,12 +135,12 @@ public final class KeychainStore<T: Codable & Sendable> {
     // MARK: - Internals
 
     private func baseQuery() -> [String: Any] {
-        let q: [String: Any] = [
+        let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service,
             kSecAttrAccount as String: account,
         ]
-        return q
+        return query
     }
 
     private func namespaced(_ key: String) -> String { "\(account).\(key)" }

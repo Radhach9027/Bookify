@@ -11,7 +11,7 @@ public enum EventBusError: Error, LocalizedError {
     case noHandlerRegistered(String)
     public var errorDescription: String? {
         switch self {
-        case .noHandlerRegistered(let t): return "No handler registered for \(t)"
+        case let .noHandlerRegistered(value): return "No handler registered for \(value)"
         }
     }
 }

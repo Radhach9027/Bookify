@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Hotel.swift
 //  BookifyModelKit
 //
 //  Created by radha chilamkurthy on 05/11/25.
@@ -18,14 +18,14 @@ public struct Hotel: Identifiable, Hashable, Codable, Sendable {
     public var timeZoneID: String?
     public var contact: ContactInfo?
     public var stars: Int?
-    public var review: ReviewSummary?     // aggregate
+    public var review: ReviewSummary? // aggregate
     public var reviews: [Review]?
     public var amenitySet: Set<Amenity>
-    public var amenitiesRaw: Set<String>    // for unknown/extra amenities
-    public var facilities: Set<String>      // e.g., "parking", "gym"
-    public var languages: Set<String>?      // ISO 639-1 codes
+    public var amenitiesRaw: Set<String> // for unknown/extra amenities
+    public var facilities: Set<String> // e.g., "parking", "gym"
+    public var languages: Set<String>? // ISO 639-1 codes
     public var images: [ImageAsset]
-    public var rooms: [Room]                 // availability snapshot (for a given StayContext)
+    public var rooms: [Room] // availability snapshot (for a given StayContext)
     public var policies: Policies?
     public var propertyType: PropertyType?
     public var availability: HotelAvailability?
@@ -35,7 +35,7 @@ public struct Hotel: Identifiable, Hashable, Codable, Sendable {
     public var source: SourceMeta?
     public var createdAt: String?
     public var updatedAt: String?
-    
+
     public init(
         id: HotelID,
         name: String,
@@ -65,32 +65,32 @@ public struct Hotel: Identifiable, Hashable, Codable, Sendable {
         createdAt: String? = nil,
         updatedAt: String? = nil
     ) {
-        self.id = id;
-        self.name = name;
-        self.brand = brand;
+        self.id = id
+        self.name = name
+        self.brand = brand
         self.description = description
-        self.address = address;
-        self.locality = locality;
-        self.geo = geo;
+        self.address = address
+        self.locality = locality
+        self.geo = geo
         self.timeZoneID = timeZoneID
-        self.contact = contact;
-        self.stars = stars;
+        self.contact = contact
+        self.stars = stars
         self.review = review
         self.reviews = reviews
-        self.amenitySet = amenitySet;
+        self.amenitySet = amenitySet
         self.amenitiesRaw = amenitiesRaw
-        self.facilities = facilities;
+        self.facilities = facilities
         self.languages = languages
-        self.images = images;
-        self.rooms = rooms;
+        self.images = images
+        self.rooms = rooms
         self.policies = policies
-        self.propertyType = propertyType;
+        self.propertyType = propertyType
         self.availability = availability
-        self.distanceMeters = distanceMeters;
+        self.distanceMeters = distanceMeters
         self.tags = tags
-        self.provider = provider;
+        self.provider = provider
         self.source = source
-        self.createdAt = createdAt;
+        self.createdAt = createdAt
         self.updatedAt = updatedAt
     }
 }

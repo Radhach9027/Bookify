@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  HotelDetailPage.swift
 //  HotelDetailPage
 //
 //  Created by radha chilamkurthy on 09/11/25.

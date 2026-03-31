@@ -5,10 +5,10 @@
 //  Created by radha chilamkurthy on 10/11/25.
 //
 
+import BookifyModelKit
+import DependencyContainer
 import Foundation
 import NetworkClient
-import DependencyContainer
-import BookifyModelKit
 
 enum HotelEndPoint {
     case fetch
@@ -30,10 +30,10 @@ extension HotelEndPoint: NetworkRequestProtocol {
 
     var httpHeaderFields: NetworkHTTPHeaderField? {
         .headerFields(fields: [
-            .contentType: .json
+            .contentType: .json,
         ])
     }
-    
+
     private static func makeComponents(
         path: String,
         query: [String: String]? = nil

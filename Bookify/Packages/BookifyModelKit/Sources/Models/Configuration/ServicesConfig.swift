@@ -12,6 +12,7 @@ public struct ServicesConfig: Codable, Equatable {
     public let services: [String: Endpoint]
 
     // MARK: - Nested Models
+
     public struct Defaults: Codable, Equatable {
         public let scheme: Scheme?
         public let port: Int?
@@ -23,28 +24,28 @@ public struct ServicesConfig: Codable, Equatable {
         public let host: String
         public let port: Int?
         public let timeouts: Timeouts?
-        
-        public func origin(inheriting d: Defaults?) -> URL? {
+
+        public func origin(inheriting defaults: Defaults?) -> URL? {
             var components = URLComponents()
-            components.scheme = (scheme ?? d?.scheme)?.rawValue
+            components.scheme = (scheme ?? defaults?.scheme)?.rawValue
             components.host = host
-            components.port = port ?? d?.port
+            components.port = port ?? defaults?.port
             return components.url
         }
-        
+
         public func url(
-            inheriting d: Defaults?,
+            inheriting defaults: Defaults?,
             path: String = "",
             query: [String: String]? = nil
         ) throws -> URL {
-            guard let base = origin(inheriting: d) else {
+            guard let base = origin(inheriting: defaults) else {
                 throw URLError(.badURL)
             }
             var comps = URLComponents(url: base, resolvingAgainstBaseURL: false)!
             let trimmed = path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
             comps.path = trimmed.isEmpty ? "" : "/" + trimmed
-            if let q = query, !q.isEmpty {
-                comps.queryItems = q.map { URLQueryItem(name: $0.key, value: $0.value) }
+            if let query = query, !query.isEmpty {
+                comps.queryItems = query.map { URLQueryItem(name: $0.key, value: $0.value) }
             }
             guard let final = comps.url else { throw URLError(.badURL) }
             return final
@@ -52,6 +53,7 @@ public struct ServicesConfig: Codable, Equatable {
     }
 
     // MARK: - Shared Models
+
     public enum Scheme: String, Codable, Equatable {
         case http
         case https
@@ -63,7 +65,8 @@ public struct ServicesConfig: Codable, Equatable {
     }
 
     // MARK: - Helpers
-    public func url(for service: String, path: String = "", query: [String:String]? = nil) throws -> URL {
+
+    public func url(for service: String, path: String = "", query: [String: String]? = nil) throws -> URL {
         guard let endpoint = services[service] else {
             throw URLError(.unsupportedURL)
         }

@@ -9,7 +9,7 @@ import SwiftUI
 
 public struct AppTopBarView: View {
     let config: AppTopBarConfig
-    
+
     public var body: some View {
         HStack(spacing: 0) {
             Button(action: config.onLocationTap) {
@@ -20,16 +20,16 @@ public struct AppTopBarView: View {
                 }
             }
             .buttonStyle(.plain)
-            
+
             Spacer(minLength: 0)
-            
+
             Text(config.title)
                 .font(.headline.bold())
                 .lineLimit(1)
                 .truncationMode(.tail)
-            
+
             Spacer(minLength: 0)
-            
+
             Button(action: config.onWallet) {
                 ABalancePill(amount: config.balance)
             }
@@ -38,7 +38,3 @@ public struct AppTopBarView: View {
         .frame(maxWidth: .infinity, alignment: .center)
     }
 }
-
-
-
-

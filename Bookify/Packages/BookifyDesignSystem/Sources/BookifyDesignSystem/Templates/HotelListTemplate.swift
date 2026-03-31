@@ -33,7 +33,7 @@ public struct HotelListTemplate: View {
                         props: props,
                         onBook: { onBook(props) },
                         onWishlist: { onWishlist(props) },
-                        onShare: {onShare(props)}
+                        onShare: { onShare(props) }
                     )
                 }
             }
@@ -42,4 +42,3 @@ public struct HotelListTemplate: View {
         }
     }
 }
-

@@ -1,16 +1,17 @@
-import Foundation
-import BookifySharedSystem
 import AuthenticationServices
+import BookifySharedSystem
 import CryptoKit
+import Foundation
 import Security
 
 public final class BookifyAuthentication: NSObject {
-
     // MARK: Shared
+
     public static let shared = BookifyAuthentication()
-    private override init() { super.init() }
+    override private init() { super.init() }
 
     // MARK: Config / State
+
     private var config: BookifyAuthConfig?
     private var session: ASWebAuthenticationSession?
     private var pkce: ProofKeyCodeExchange?
@@ -32,6 +33,7 @@ public final class BookifyAuthentication: NSObject {
             }
         }
     }
+
     // MARK: Public API
 
     /// Call once at app start.
@@ -55,7 +57,7 @@ public final class BookifyAuthentication: NSObject {
             .init(name: "scope", value: cfg.scopes),
             .init(name: "code_challenge", value: pkce.challenge),
             .init(name: "code_challenge_method", value: "S256"),
-            .init(name: "state", value: UUID().uuidString)
+            .init(name: "state", value: UUID().uuidString),
         ]
 
         // Open system browser and await callback
@@ -96,8 +98,8 @@ public final class BookifyAuthentication: NSObject {
 
     /// Convenience: attaches the header if available.
     public func attachAuthHeader(to request: inout URLRequest) async {
-        if let h = try? await authorizationHeader() {
-            request.setValue(h, forHTTPHeaderField: "Authorization")
+        if let header = try? await authorizationHeader() {
+            request.setValue(header, forHTTPHeaderField: "Authorization")
         }
     }
 
@@ -118,19 +120,19 @@ private extension BookifyAuthentication {
     ) async throws -> URL {
         try await withCheckedThrowingContinuation { (cont: CheckedContinuation<URL, Error>) in
             pendingContinuation = cont
-            
-            let s = ASWebAuthenticationSession(url: authURL, callbackURLScheme: callbackScheme) { [weak self] url, err in
+
+            let session = ASWebAuthenticationSession(url: authURL, callbackURLScheme: callbackScheme) { [weak self] url, err in
                 defer { self?.session = nil; self?.pendingContinuation = nil }
                 if let url { cont.resume(returning: url) }
                 else { cont.resume(throwing: err ?? BookifyAuthError.cancelled) }
             }
-            s.presentationContextProvider = self
-            s.prefersEphemeralWebBrowserSession = prefersEphemeral
-            self.session = s
-            _ = s.start()
+            session.presentationContextProvider = self
+            session.prefersEphemeralWebBrowserSession = prefersEphemeral
+            self.session = session
+            _ = session.start()
         }
     }
-    
+
     func exchangeCodeForTokens(
         code: String,
         verifier: String,
@@ -144,66 +146,74 @@ private extension BookifyAuthentication {
             "code": code,
             "client_id": cfg.clientId,
             "redirect_uri": cfg.redirectURI,
-            "code_verifier": verifier
+            "code_verifier": verifier,
         ])
-        
+
         let (data, resp) = try await URLSession.shared.data(for: req)
-        guard let http = resp as? HTTPURLResponse, (200...299).contains(http.statusCode)
+        guard let http = resp as? HTTPURLResponse, (200 ... 299).contains(http.statusCode)
         else { throw BookifyAuthError.badHTTPStatus((resp as? HTTPURLResponse)?.statusCode ?? -1) }
-        
+
         return try decodeTokenPair(data)
     }
-    
+
     @discardableResult
     func refresh() async throws -> BookifyTokenPair {
         guard let cfg = config else { throw BookifyAuthError.notConfigured }
         guard let old = current else { throw BookifyAuthError.tokenUnavailable }
         guard let refresh = old.refreshToken else { throw BookifyAuthError.refreshUnavailable }
-        
+
         var req = URLRequest(url: cfg.tokenURL)
         req.httpMethod = "POST"
         req.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         req.httpBody = formURLEncoded([
             "grant_type": "refresh_token",
             "refresh_token": refresh,
-            "client_id": cfg.clientId
+            "client_id": cfg.clientId,
         ])
-        
+
         let (data, resp) = try await URLSession.shared.data(for: req)
-        guard let http = resp as? HTTPURLResponse, (200...299).contains(http.statusCode)
+        guard let http = resp as? HTTPURLResponse, (200 ... 299).contains(http.statusCode)
         else { throw BookifyAuthError.badHTTPStatus((resp as? HTTPURLResponse)?.statusCode ?? -1) }
-        
+
         let newPair = try decodeTokenPair(data, fallbackRefresh: refresh)
         current = newPair
         return newPair
     }
-    
+
     func decodeTokenPair(_ data: Data, fallbackRefresh: String? = nil) throws -> BookifyTokenPair {
         // Common token endpoint fields
         struct DTO: Decodable {
-            let access_token: String
-            let refresh_token: String?
-            let id_token: String?
-            let expires_in: Int
-            let token_type: String?
+            let accessToken: String
+            let refreshToken: String?
+            let idToken: String?
+            let expiresIn: Int
+            let tokenType: String?
+
+            private enum CodingKeys: String, CodingKey {
+                case accessToken = "access_token"
+                case refreshToken = "refresh_token"
+                case idToken = "id_token"
+                case expiresIn = "expires_in"
+                case tokenType = "token_type"
+            }
         }
         guard let dto = try? JSONDecoder().decode(DTO.self, from: data) else {
             throw BookifyAuthError.decodingFailed
         }
-        let expiry = Date().addingTimeInterval(TimeInterval(dto.expires_in))
+        let expiry = Date().addingTimeInterval(TimeInterval(dto.expiresIn))
         return BookifyTokenPair(
-            accessToken: dto.access_token,
-            refreshToken: dto.refresh_token ?? fallbackRefresh,
-            idToken: dto.id_token,
+            accessToken: dto.accessToken,
+            refreshToken: dto.refreshToken ?? fallbackRefresh,
+            idToken: dto.idToken,
             expiresAt: expiry,
-            tokenType: (dto.token_type ?? "Bearer")
+            tokenType: dto.tokenType ?? "Bearer"
         )
     }
-    
+
     func formURLEncoded(_ dict: [String: String]) -> Data? {
         dict.map { key, value in
-            let v = value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-            return "\(key)=\(v)"
+            let value = value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+            return "\(key)=\(value)"
         }
         .joined(separator: "&")
         .data(using: .utf8)
@@ -211,11 +221,11 @@ private extension BookifyAuthentication {
 }
 
 // MARK: - ASWebAuthenticationPresentationContextProviding
+
 extension BookifyAuthentication: ASWebAuthenticationPresentationContextProviding {
-    public func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
+    public func presentationAnchor(for _: ASWebAuthenticationSession) -> ASPresentationAnchor {
         UIApplication.shared.connectedScenes
             .compactMap { ($0 as? UIWindowScene)?.keyWindow }
             .first ?? ASPresentationAnchor()
     }
 }
-

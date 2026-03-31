@@ -5,9 +5,9 @@
 //  Created by radha chilamkurthy on 23/11/25.
 //
 
-import SwiftUI
 import BookifyModelKit
 import DependencyContainer
+import SwiftUI
 
 public struct DebugInfoView: View {
     @Inject()
@@ -50,5 +50,3 @@ public struct DebugInfoView: View {
         }
     }
 }
-
-

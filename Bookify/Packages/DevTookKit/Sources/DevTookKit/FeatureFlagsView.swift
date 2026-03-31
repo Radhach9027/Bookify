@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct FeatureFlagsView: View {
-    
     var body: some View {
         Text("FeatureFlagsView")
     }
 }
-

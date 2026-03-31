@@ -9,7 +9,7 @@ import Foundation
 
 @dynamicMemberLookup
 public struct ExperimentsConfig: Codable, Equatable {
-    public let ab: [String: String]   // e.g. ["paywall_variant": "B", "search_empty_state": "control"]
+    public let ab: [String: String] // e.g. ["paywall_variant": "B", "search_empty_state": "control"]
 
     // Lookup helpers
     public subscript(_ key: String) -> String? { ab[key] }
@@ -17,16 +17,15 @@ public struct ExperimentsConfig: Codable, Equatable {
 
     // Decode the whole object as a dictionary
     public init(from decoder: Decoder) throws {
-        let c = try decoder.singleValueContainer()
-        self.ab = try c.decode([String: String].self)
+        let value = try decoder.singleValueContainer()
+        self.ab = try value.decode([String: String].self)
     }
 
     // Encode back as a flat object
     public func encode(to encoder: Encoder) throws {
-        var c = encoder.singleValueContainer()
-        try c.encode(ab)
+        var value = encoder.singleValueContainer()
+        try value.encode(ab)
     }
 
-    public init(_ ab: [String:String]) { self.ab = ab }
+    public init(_ ab: [String: String]) { self.ab = ab }
 }
-

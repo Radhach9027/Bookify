@@ -5,19 +5,19 @@
 //  Created by radha chilamkurthy on 14/11/25.
 //
 
-import Foundation
-import Combine
-import BookifyDomainKit
-import DependencyContainer
-import BookifyModelKit
 import BookifyDesignSystem
+import BookifyDomainKit
+import BookifyModelKit
+import Combine
+import DependencyContainer
+import Foundation
 
 @MainActor
 final class HotelsViewModel: ObservableObject {
     @Published private(set) var state: LoadState<[HotelCardProps]> = .idle
-    @Published var balance: Decimal = 12_345.67
+    @Published var balance: Decimal = 12345.67
     var cards: [HotelCardProps] {
-        if case .loaded(let cards) = state {
+        if case let .loaded(cards) = state {
             return cards
         } else {
             return []
@@ -38,6 +38,7 @@ final class HotelsViewModel: ObservableObject {
     }
 
     // MARK: - User actions
+
     func book(props: HotelCardProps) {
         // TODO: navigate to booking / details
         print("Book tapped for hotel:", props.name)
@@ -68,4 +69,3 @@ private extension Hotel {
         )
     }
 }
-

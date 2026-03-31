@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Room.swift
 //  BookifyModelKit
 //
 //  Created by radha chilamkurthy on 05/11/25.
@@ -26,13 +26,13 @@ public struct Room: Hashable, Codable, Sendable, Identifiable {
         images: [ImageAsset] = [],
         ratePlans: [RatePlan]
     ) {
-        self.id = id;
-        self.name = name;
+        self.id = id
+        self.name = name
         self.description = description
-        self.beds = beds;
-        self.occupancy = occupancy;
+        self.beds = beds
+        self.occupancy = occupancy
         self.amenities = amenities
-        self.images = images;
+        self.images = images
         self.ratePlans = ratePlans
     }
 }

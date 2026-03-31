@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  UserModel.swift
 //  BookifyModelKit
 //
 //  Created by radha chilamkurthy on 03/11/25.

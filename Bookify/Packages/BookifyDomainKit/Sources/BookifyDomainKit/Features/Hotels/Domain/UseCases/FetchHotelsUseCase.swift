@@ -5,8 +5,8 @@
 //  Created by radha chilamkurthy on 10/11/25.
 //
 
-import Foundation
 import BookifyModelKit
+import Foundation
 
 public struct FetchHotelsUseCase {
     private let repository: HotelRepositoryProtocol
@@ -20,4 +20,3 @@ public struct FetchHotelsUseCase {
         try await repository.fetchHotels()
     }
 }
-

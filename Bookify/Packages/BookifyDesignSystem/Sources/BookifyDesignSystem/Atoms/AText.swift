@@ -8,19 +8,18 @@
 import SwiftUI
 
 public struct AText: View {
-
     public enum ATypographyStyle {
         case title3Bold, headline, subheadline, body, caption, caption2, footnote
 
         var font: Font {
             switch self {
-            case .title3Bold:  return .title3.weight(.bold)
-            case .headline:    return .headline
+            case .title3Bold: return .title3.weight(.bold)
+            case .headline: return .headline
             case .subheadline: return .subheadline
-            case .body:        return .body
-            case .caption:     return .caption
-            case .caption2:    return .caption2
-            case .footnote:    return .footnote
+            case .body: return .body
+            case .caption: return .caption
+            case .caption2: return .caption2
+            case .footnote: return .footnote
             }
         }
     }
@@ -59,11 +58,11 @@ public struct AText: View {
         self.lineLimit = lineLimit
         self.minScale = minScale
         self.isUppercased = isUppercased
-        self.kerningValue = kerning
-        self.underlineEnabled = underline
-        self.strikeEnabled = strikeThrough
+        kerningValue = kerning
+        underlineEnabled = underline
+        strikeEnabled = strikeThrough
         self.monospacedDigits = monospacedDigits
-        self.italicEnabled = italic
+        italicEnabled = italic
     }
 
     public var body: some View {
@@ -77,19 +76,20 @@ public struct AText: View {
     }
 
     private var baseText: Text {
-        var t = Text(isUppercased ? text.uppercased() : text)
+        var text = Text(isUppercased ? text.uppercased() : text)
 
         // iOS 13–15 SAFE calls:
-        t = t.font(style.font)
-        t = t.kerning(kerningValue)                  // iOS 13 safe
-        t = t.underline(underlineEnabled)            // iOS 13 safe
-        t = t.strikethrough(strikeEnabled)           // iOS 13 safe
+        text = text.font(style.font)
+        text = text.kerning(kerningValue) // iOS 13 safe
+        text = text.underline(underlineEnabled) // iOS 13 safe
+        text = text.strikethrough(strikeEnabled) // iOS 13 safe
 
-        return t
+        return text
     }
 }
 
 // MARK: - Monospaced Digits (iOS 13 safe)
+
 private struct AMonospacedDigits: ViewModifier {
     let enabled: Bool
     func body(content: Content) -> some View {
@@ -98,6 +98,7 @@ private struct AMonospacedDigits: ViewModifier {
 }
 
 // MARK: - Italic (iOS 13 safe)
+
 private struct AItalic: ViewModifier {
     let enabled: Bool
 
@@ -109,7 +110,6 @@ private struct AItalic: ViewModifier {
         return AnyView(content.font(Font(italicFont)))
     }
 }
-
 
 extension UIFont {
     func withTraits(_ traits: UIFontDescriptor.SymbolicTraits) -> UIFont {

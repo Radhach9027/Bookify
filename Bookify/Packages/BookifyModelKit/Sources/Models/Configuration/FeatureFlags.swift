@@ -17,17 +17,16 @@ public struct FeatureFlags: Codable, Equatable {
 
     // Decode the whole object as a dictionary
     public init(from decoder: Decoder) throws {
-        let c = try decoder.singleValueContainer()
-        self.raw = try c.decode([String: Bool].self)
+        let value = try decoder.singleValueContainer()
+        self.raw = try value.decode([String: Bool].self)
     }
 
     // Encode back as a flat object
     public func encode(to encoder: Encoder) throws {
-        var c = encoder.singleValueContainer()
-        try c.encode(raw)
+        var value = encoder.singleValueContainer()
+        try value.encode(raw)
     }
 
     // Convenience init for tests
     public init(_ raw: [String: Bool]) { self.raw = raw }
 }
-

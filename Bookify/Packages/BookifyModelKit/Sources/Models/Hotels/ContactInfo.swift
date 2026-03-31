@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  ContactInfo.swift
 //  BookifyModelKit
 //
 //  Created by radha chilamkurthy on 05/11/25.
@@ -16,8 +16,8 @@ public struct ContactInfo: Hashable, Codable, Sendable {
         email: String? = nil,
         website: URL? = nil
     ) {
-        self.phone = phone;
-        self.email = email;
+        self.phone = phone
+        self.email = email
         self.website = website
     }
 }

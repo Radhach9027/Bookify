@@ -5,12 +5,11 @@
 //  Created by radha chilamkurthy on 06/11/25.
 //
 
-import Foundation
 import BookifyModelKit
 import BookifySharedSystem
+import Foundation
 
 public enum AppConfigReader {
-    
     /// Pure function: reads and decodes `AppConfig` from a bundle JSON.
     /// - Parameters:
     ///   - bundle: Bundle to read from (defaults to `.module` in SPM, else `.main`)
@@ -22,7 +21,7 @@ public enum AppConfigReader {
         from bundle: Bundle = .main,
         file: String = "AppConfiguration",
         ext: String = "json",
-        configure: ((JSONDecoder) -> Void)? = nil
+        configure _: ((JSONDecoder) -> Void)? = nil
     ) throws -> AppConfig {
         guard let url = bundle.url(forResource: file, withExtension: ext) else {
             throw JSONLoadError.fileNotFound("\(file).\(ext)")

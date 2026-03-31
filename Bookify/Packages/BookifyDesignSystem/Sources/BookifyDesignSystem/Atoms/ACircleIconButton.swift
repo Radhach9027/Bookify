@@ -15,9 +15,9 @@ public struct ACircleIconButton: View {
 
         var dimension: CGFloat {
             switch self {
-            case .small:  return 32
+            case .small: return 32
             case .medium: return 40
-            case .large:  return 48
+            case .large: return 48
             }
         }
     }
@@ -52,4 +52,3 @@ public struct ACircleIconButton: View {
         .accessibilityLabel(accessibilityLabel ?? iconName)
     }
 }
-

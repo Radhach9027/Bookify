@@ -41,6 +41,3 @@ public struct APrimaryButton: View {
         .buttonStyle(.borderedProminent)
     }
 }
-
-
-

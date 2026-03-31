@@ -42,6 +42,6 @@ struct HotelsDashBoard: View {
     }
 
     private func navigateToHotelList() {
-        coordinator.navigate(path: HotelRouteSource.list.rawValue, presentation: .push)
+        coordinator.navigate(path: HotelRouteSource.list.path, presentation: .push)
     }
 }

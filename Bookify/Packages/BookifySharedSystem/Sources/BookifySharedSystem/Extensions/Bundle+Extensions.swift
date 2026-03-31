@@ -13,8 +13,8 @@ public enum JSONLoadError: Error, LocalizedError {
 
     public var errorDescription: String? {
         switch self {
-        case .fileNotFound(let name):         return "JSON file not found: \(name)"
-        case .dataReadFailed(let underlying): return "Failed to read JSON data: \(underlying)"
+        case let .fileNotFound(name): return "JSON file not found: \(name)"
+        case let .dataReadFailed(underlying): return "Failed to read JSON data: \(underlying)"
         }
     }
 }

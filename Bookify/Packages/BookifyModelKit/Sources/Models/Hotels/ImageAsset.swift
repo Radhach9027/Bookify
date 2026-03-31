@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  ImageAsset.swift
 //  BookifyModelKit
 //
 //  Created by radha chilamkurthy on 05/11/25.
@@ -12,7 +12,7 @@ public struct ImageAsset: Hashable, Codable, Sendable {
     public var width: Int?
     public var height: Int?
     public var caption: String?
-    public var kind: String?      // "exterior", "room", "amenity"
+    public var kind: String? // "exterior", "room", "amenity"
     public init(
         url: URL,
         width: Int? = nil,
@@ -20,10 +20,10 @@ public struct ImageAsset: Hashable, Codable, Sendable {
         caption: String? = nil,
         kind: String? = nil
     ) {
-        self.url = url;
-        self.width = width;
+        self.url = url
+        self.width = width
         self.height = height
-        self.caption = caption;
+        self.caption = caption
         self.kind = kind
     }
 }

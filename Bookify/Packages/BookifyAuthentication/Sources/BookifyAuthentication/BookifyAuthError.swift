@@ -23,11 +23,11 @@ public enum BookifyAuthError: Error, LocalizedError {
         case .notConfigured: return "Authentication is not configured."
         case .cancelled: return "Authentication was cancelled."
         case .codeMissing: return "Authorization code missing in callback."
-        case .badHTTPStatus(let s): return "HTTP error: \(s)."
+        case let .badHTTPStatus(error): return "HTTP error: \(error)."
         case .decodingFailed: return "Failed to decode token response."
         case .tokenUnavailable: return "No token available."
         case .refreshUnavailable: return "No refresh token available."
-        case .keychain(let status): return "Keychain error: \(status)."
+        case let .keychain(status): return "Keychain error: \(status)."
         case .unknown: return "Unknown error."
         }
     }

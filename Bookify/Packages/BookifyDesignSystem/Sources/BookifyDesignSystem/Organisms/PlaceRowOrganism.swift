@@ -19,12 +19,12 @@ public struct PlaceRowProps: Identifiable, Equatable {
 
     public static func == (lhs: PlaceRowProps, rhs: PlaceRowProps) -> Bool {
         return lhs.id == rhs.id &&
-        lhs.name == rhs.name &&
-        lhs.categoryText == rhs.categoryText &&
-        lhs.ratingValue == rhs.ratingValue &&
-        lhs.reviewsCountText == rhs.reviewsCountText &&
-        lhs.distanceText == rhs.distanceText &&
-        lhs.summary == rhs.summary
+            lhs.name == rhs.name &&
+            lhs.categoryText == rhs.categoryText &&
+            lhs.ratingValue == rhs.ratingValue &&
+            lhs.reviewsCountText == rhs.reviewsCountText &&
+            lhs.distanceText == rhs.distanceText &&
+            lhs.summary == rhs.summary
     }
 }
 
@@ -32,17 +32,17 @@ public struct PlaceRowOrganism: View {
     let props: PlaceRowProps
     let onDirections: () -> Void
     let onBook: () -> Void
-    
+
     public init(
         props: PlaceRowProps,
         onDirections: @escaping () -> Void,
-        onBook: @escaping () -> Void)
-    {
-        self.props = props;
-        self.onDirections = onDirections;
+        onBook: @escaping () -> Void
+    ) {
+        self.props = props
+        self.onDirections = onDirections
         self.onBook = onBook
     }
-    
+
     public var body: some View {
         ASurface(corner: 18) {
             VStack(alignment: .leading, spacing: 10) {
@@ -67,10 +67,11 @@ public struct PlaceRowOrganism: View {
                     Button(action: onDirections) {
                         Label(
                             "Directions",
-                            systemImage: "arrow.triangle.turn.up.right.circle.fill")
+                            systemImage: "arrow.triangle.turn.up.right.circle.fill"
+                        )
                         .font(.subheadline.weight(.semibold))
                     }.buttonStyle(.bordered)
-                    
+
                     Button(action: onBook) {
                         Text("Book Now")
                             .font(.subheadline.weight(.semibold))
@@ -81,4 +82,3 @@ public struct PlaceRowOrganism: View {
         }
     }
 }
-

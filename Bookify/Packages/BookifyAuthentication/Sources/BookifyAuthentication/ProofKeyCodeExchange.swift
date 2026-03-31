@@ -5,8 +5,8 @@
 //  Created by radha chilamkurthy on 08/11/25.
 //
 
-import Foundation
 import CryptoKit
+import Foundation
 
 struct ProofKeyCodeExchange {
     let verifier: String
@@ -32,7 +32,7 @@ struct ProofKeyCodeExchange {
 
 private extension Data {
     func base64URLEncodedString() -> String {
-        self.base64EncodedString()
+        base64EncodedString()
             .replacingOccurrences(of: "+", with: "-")
             .replacingOccurrences(of: "/", with: "_")
             .replacingOccurrences(of: "=", with: "")

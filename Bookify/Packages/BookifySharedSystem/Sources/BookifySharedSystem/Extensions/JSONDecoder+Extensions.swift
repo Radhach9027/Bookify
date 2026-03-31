@@ -7,11 +7,9 @@
 
 import Foundation
 
-
 public extension JSONDecoder {
-
     static func decodeWithDetailedError<T: Decodable>(
-        _ type: T.Type,
+        _: T.Type,
         from data: Data,
         configure: ((JSONDecoder) -> Void)? = nil
     ) throws -> T {
@@ -70,7 +68,7 @@ public extension JSONDecoder {
         expectedType: Any.Type?,
         context: DecodingError.Context
     ) {
-        let keyName  = context.codingPath.last?.stringValue ?? "<root>"
+        let keyName = context.codingPath.last?.stringValue ?? "<root>"
         let prettyPath = prettyCodingPath(
             rootType: rootType,
             codingPath: context.codingPath
@@ -93,7 +91,7 @@ public extension JSONDecoder {
             return "\(rootType)"
         }
 
-        var parts: [String] = ["\(rootType)"]
+        var parts = ["\(rootType)"]
 
         for key in codingPath {
             if let intValue = key.intValue {
@@ -106,4 +104,3 @@ public extension JSONDecoder {
         return parts.joined(separator: ".")
     }
 }
-

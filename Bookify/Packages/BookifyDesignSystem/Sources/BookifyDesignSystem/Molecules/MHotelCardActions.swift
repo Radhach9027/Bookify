@@ -37,7 +37,7 @@ public struct MHotelCardActions: View {
                 accessibilityLabel: "Add to wishlist",
                 action: onWishlist
             )
-            
+
             ACircleIconButton(
                 iconName: "square.and.arrow.up",
                 size: .large,

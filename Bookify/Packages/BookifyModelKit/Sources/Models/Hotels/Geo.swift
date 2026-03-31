@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Geo.swift
 //  BookifyModelKit
 //
 //  Created by radha chilamkurthy on 05/11/25.
@@ -16,8 +16,8 @@ public struct Geo: Hashable, Codable, Sendable {
         lon: Double,
         geohash: String? = nil
     ) {
-        self.lat = lat;
-        self.lon = lon;
+        self.lat = lat
+        self.lon = lon
         self.geohash = geohash
     }
 }

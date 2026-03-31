@@ -6,7 +6,7 @@
 //
 
 enum HotelRouteSource: String, CaseIterable {
-    case list
+    case list, details, dashboard
 }
 
 extension HotelRouteSource {
@@ -14,6 +14,10 @@ extension HotelRouteSource {
         switch self {
         case .list:
             return "hotelList"
+        case .details:
+            return "hotel/detail"
+        case .dashboard:
+            return "hotelsDashBoard"
         }
     }
 }

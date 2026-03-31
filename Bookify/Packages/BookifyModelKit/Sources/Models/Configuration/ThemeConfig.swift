@@ -15,6 +15,7 @@ public struct ThemeConfig: Codable, Equatable {
 }
 
 // MARK: - Radius
+
 public enum Radius: Codable, Equatable {
     case fixed(Double)
     case scale(Double)
@@ -24,16 +25,17 @@ public enum Radius: Codable, Equatable {
     public init(from decoder: Decoder) throws {
         // Accept number or object
         if let single = try? decoder.singleValueContainer(),
-           let value = try? single.decode(Double.self) {
+           let value = try? single.decode(Double.self)
+        {
             self = .fixed(value)
             return
         }
 
-        let c = try decoder.container(keyedBy: CodingKeys.self)
-        if let f = try? c.decode(Double.self, forKey: .fixed) {
-            self = .fixed(f)
-        } else if let s = try? c.decode(Double.self, forKey: .scale) {
-            self = .scale(s)
+        let color = try decoder.container(keyedBy: CodingKeys.self)
+        if let fixed = try? color.decode(Double.self, forKey: .fixed) {
+            self = .fixed(fixed)
+        } else if let scale = try? color.decode(Double.self, forKey: .scale) {
+            self = .scale(scale)
         } else {
             throw DecodingError.typeMismatch(
                 Radius.self,
@@ -45,15 +47,16 @@ public enum Radius: Codable, Equatable {
 
     public func encode(to encoder: Encoder) throws {
         switch self {
-        case .fixed(let v):
-            try ["fixed": v].encode(to: encoder)
-        case .scale(let v):
-            try ["scale": v].encode(to: encoder)
+        case let .fixed(value):
+            try ["fixed": value].encode(to: encoder)
+        case let .scale(value):
+            try ["scale": value].encode(to: encoder)
         }
     }
 }
 
 // MARK: - Colors
+
 public struct Colors: Codable, Equatable {
     public let primary: ColorToken
     public let onPrimary: ColorToken
@@ -68,6 +71,7 @@ public struct Colors: Codable, Equatable {
 }
 
 // MARK: - ColorToken
+
 public enum ColorToken: Codable, Equatable {
     case solid(String)
     case dynamic(light: String, dark: String, alpha: Double)
@@ -81,23 +85,23 @@ public enum ColorToken: Codable, Equatable {
             return
         }
 
-        let c = try decoder.container(keyedBy: CodingKeys.self)
-        let light = try c.decode(String.self, forKey: .light)
-        let dark = try c.decode(String.self, forKey: .dark)
-        let alpha = (try? c.decode(Double.self, forKey: .alpha)) ?? 1
+        let color = try decoder.container(keyedBy: CodingKeys.self)
+        let light = try color.decode(String.self, forKey: .light)
+        let dark = try color.decode(String.self, forKey: .dark)
+        let alpha = (try? color.decode(Double.self, forKey: .alpha)) ?? 1
         self = .dynamic(light: light, dark: dark, alpha: alpha)
     }
 
     public func encode(to encoder: Encoder) throws {
         switch self {
-        case .solid(let hex):
-            var c = encoder.singleValueContainer()
-            try c.encode(hex)
-        case .dynamic(let light, let dark, let alpha):
-            var c = encoder.container(keyedBy: CodingKeys.self)
-            try c.encode(light, forKey: .light)
-            try c.encode(dark, forKey: .dark)
-            if alpha != 1 { try c.encode(alpha, forKey: .alpha) }
+        case let .solid(hex):
+            var color = encoder.singleValueContainer()
+            try color.encode(hex)
+        case let .dynamic(light, dark, alpha):
+            var color = encoder.container(keyedBy: CodingKeys.self)
+            try color.encode(light, forKey: .light)
+            try color.encode(dark, forKey: .dark)
+            if alpha != 1 { try color.encode(alpha, forKey: .alpha) }
         }
     }
 }

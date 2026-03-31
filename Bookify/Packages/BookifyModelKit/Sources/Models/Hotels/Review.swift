@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Review.swift
 //  BookifyModelKit
 //
 //  Created by radha chilamkurthy on 05/11/25.
@@ -18,8 +18,8 @@ public struct ReviewAuthor: Hashable, Codable, Sendable {
         displayName: String? = nil,
         countryCode: String? = nil
     ) {
-        self.id = id;
-        self.displayName = displayName;
+        self.id = id
+        self.displayName = displayName
         self.countryCode = countryCode
     }
 }
@@ -35,9 +35,9 @@ public struct ReviewMedia: Hashable, Codable, Sendable {
         height: Int? = nil,
         caption: String? = nil
     ) {
-        self.url = url;
-        self.width = width;
-        self.height = height;
+        self.url = url
+        self.width = width
+        self.height = height
         self.caption = caption
     }
 }
@@ -45,20 +45,20 @@ public struct ReviewMedia: Hashable, Codable, Sendable {
 public struct Review: Identifiable, Hashable, Codable, Sendable {
     public var id: String
     public var title: String?
-    public var message: String?                 // <- the textual review
-    public var rating: Double?                  // e.g., 4.0
-    public var scale: Double?                   // e.g., 5 or 10
-    public var sentiment: ReviewSentiment?      // optional, if you run NLP
-    public var languageCode: String?            // ISO-639-1, e.g., "en", "hi"
+    public var message: String? // <- the textual review
+    public var rating: Double? // e.g., 4.0
+    public var scale: Double? // e.g., 5 or 10
+    public var sentiment: ReviewSentiment? // optional, if you run NLP
+    public var languageCode: String? // ISO-639-1, e.g., "en", "hi"
     public var createdAt: String?
-    public var stayDate: String?                  // when guest stayed (if provided)
+    public var stayDate: String? // when guest stayed (if provided)
     public var author: ReviewAuthor?
     public var media: [ReviewMedia]?
     public var helpfulCount: Int?
-    public var hotelReply: String?              // management response (optional)
-    public var source: SourceMeta?              // where it came from (OTA, internal)
-    public var tags: [String]?                  // e.g., "cleanliness", "staff"
-    
+    public var hotelReply: String? // management response (optional)
+    public var source: SourceMeta? // where it came from (OTA, internal)
+    public var tags: [String]? // e.g., "cleanliness", "staff"
+
     public init(
         id: String,
         title: String? = nil,
@@ -76,25 +76,25 @@ public struct Review: Identifiable, Hashable, Codable, Sendable {
         source: SourceMeta? = nil,
         tags: [String]? = nil
     ) {
-        self.id = id;
-        self.title = title;
+        self.id = id
+        self.title = title
         self.message = message
-        self.rating = rating;
-        self.scale = scale;
+        self.rating = rating
+        self.scale = scale
         self.sentiment = sentiment
-        self.languageCode = languageCode;
-        self.createdAt = createdAt;
+        self.languageCode = languageCode
+        self.createdAt = createdAt
         self.stayDate = stayDate
-        self.author = author;
-        self.media = media;
+        self.author = author
+        self.media = media
         self.helpfulCount = helpfulCount
-        self.hotelReply = hotelReply;
-        self.source = source;
+        self.hotelReply = hotelReply
+        self.source = source
         self.tags = tags
     }
-    
+
     public var normalized0to5: Double? {
-        guard let r = rating, let s = scale, s > 0 else { return nil }
-        return r / s * 5.0
+        guard let rating = rating, let scale = scale, scale > 0 else { return nil }
+        return rating / scale * 5.0
     }
 }

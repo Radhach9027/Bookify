@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Policies.swift
 //  BookifyModelKit
 //
 //  Created by radha chilamkurthy on 05/11/25.
@@ -8,25 +8,25 @@
 import Foundation
 
 public struct CancellationPolicy: Hashable, Codable, Sendable {
-    public var freeUntil: String?      // free cancellation until this instant
-    public var penalty: Money?       // penalty after freeUntil
+    public var freeUntil: String? // free cancellation until this instant
+    public var penalty: Money? // penalty after freeUntil
     public var notes: String?
     public init(
         freeUntil: String? = nil,
         penalty: Money? = nil,
         notes: String? = nil
     ) {
-        self.freeUntil = freeUntil;
-        self.penalty = penalty;
+        self.freeUntil = freeUntil
+        self.penalty = penalty
         self.notes = notes
     }
 }
 
 public struct CheckInOut: Hashable, Codable, Sendable {
-    public var fromTime: String?   // "14:00"
-    public var untilTime: String?  // "23:00"
+    public var fromTime: String? // "14:00"
+    public var untilTime: String? // "23:00"
     public init(fromTime: String? = nil, untilTime: String? = nil) {
-        self.fromTime = fromTime;
+        self.fromTime = fromTime
         self.untilTime = untilTime
     }
 }

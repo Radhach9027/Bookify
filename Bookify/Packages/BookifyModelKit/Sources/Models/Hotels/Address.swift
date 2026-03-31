@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Address.swift
 //  BookifyModelKit
 //
 //  Created by radha chilamkurthy on 05/11/25.
@@ -22,11 +22,11 @@ public struct Address: Hashable, Codable, Sendable {
         postalCode: String? = nil,
         countryCode: String? = nil
     ) {
-        self.line1 = line1;
-        self.line2 = line2;
+        self.line1 = line1
+        self.line2 = line2
         self.city = city
-        self.state = state;
-        self.postalCode = postalCode;
+        self.state = state
+        self.postalCode = postalCode
         self.countryCode = countryCode
     }
 }

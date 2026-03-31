@@ -8,7 +8,7 @@
 import SwiftUI
 
 public enum StayType: String, CaseIterable, Identifiable {
-    case hourly = "Hourly", night = "Night";
+    case hourly = "Hourly", night = "Night"
     public var id: String { rawValue }
 }
 
@@ -19,20 +19,20 @@ public struct StayTypeSelectionProps: Equatable {
     public var startTime: Date
     public var checkIn: Date
     public var checkOut: Date
-    
+
     public init(
         type: StayType = .hourly,
         selectedHours: Int = 3,
-        hourOptions: [Int] = [3,6,9],
+        hourOptions: [Int] = [3, 6, 9],
         startTime: Date = .init(),
         checkIn: Date = Calendar.current.startOfDay(for: .init()),
         checkOut: Date = Calendar.current.date(byAdding: .day, value: 1, to: Calendar.current.startOfDay(for: .init()))!
     ) {
-        self.type = type;
-        self.selectedHours = selectedHours;
-        self.hourOptions = hourOptions;
-        self.startTime = startTime;
-        self.checkIn = checkIn;
+        self.type = type
+        self.selectedHours = selectedHours
+        self.hourOptions = hourOptions
+        self.startTime = startTime
+        self.checkIn = checkIn
         self.checkOut = checkOut
     }
 }
@@ -49,15 +49,15 @@ public enum StayTypeSelectionAction {
 public struct StayTypeSelectionOrganism: View {
     @Binding var props: StayTypeSelectionProps
     let send: (StayTypeSelectionAction) -> Void
-    
+
     public init(
         props: Binding<StayTypeSelectionProps>,
         send: @escaping (StayTypeSelectionAction) -> Void
     ) {
-        self._props = props;
+        _props = props
         self.send = send
     }
-    
+
     public var body: some View {
         VStack(spacing: 8) {
             header
@@ -73,9 +73,9 @@ public struct StayTypeSelectionOrganism: View {
             )
         }
     }
-    
+
     private var header: some View {
-        ASurface(bg: Color.blue.opacity(0.1), stroke: Color.blue.opacity(0.25)) {
+        ASurface(backgroundColor: Color.blue.opacity(0.1), stroke: Color.blue.opacity(0.25)) {
             VStack(alignment: .leading, spacing: 8) {
                 Picker("", selection: Binding(get: { props.type }, set: { props.type = $0; send(.setType($0)) })) {
                     ForEach(StayType.allCases) { Text($0.rawValue).tag($0) }
@@ -92,7 +92,7 @@ public struct StayTypeSelectionOrganism: View {
             }
         }
     }
-    
+
     private var hourly: some View {
         VStack(alignment: .leading, spacing: 8) {
             MFieldCard { VStack(alignment: .leading, spacing: 6) { AText("City, Area or Property Name", style: .caption, color: .secondary); AText("Where to?", style: .headline) } }
@@ -100,8 +100,10 @@ public struct StayTypeSelectionOrganism: View {
                 VStack(alignment: .leading, spacing: 8) {
                     AText("Select Duration", style: .subheadline, color: .secondary)
                     HStack(spacing: 10) {
-                        ForEach(props.hourOptions, id: \.self) { h in
-                            AChip(.init(title: "\(h) Hours", selected: props.selectedHours == h)) { props.selectedHours = h; send(.setHours(h)) }
+                        ForEach(props.hourOptions, id: \.self) { hour in
+                            AChip(.init(title: "\(hour) Hours", selected: props.selectedHours == hour)) { props.selectedHours = hour
+                                send(.setHours(hour))
+                            }
                         }
                     }
                 }
@@ -112,30 +114,30 @@ public struct StayTypeSelectionOrganism: View {
                         "Start Time",
                         selection: Binding(
                             get: { props.startTime },
-                            set: { props.startTime = $0;
-                                send(.setStartTime($0)
-                                )
+                            set: {
+                                props.startTime = $0
+                                send(.setStartTime($0))
                             }
                         ),
                         displayedComponents: [.date, .hourAndMinute]
                     )
-                    
+
                     let end = Calendar.current.date(
                         byAdding: .hour,
                         value: props.selectedHours,
                         to: props.startTime
                     ) ?? props.startTime
-                    
+
                     HStack {
-                        AText("Ends", style: .body, color: .secondary);
-                        Spacer();
+                        AText("Ends", style: .body, color: .secondary)
+                        Spacer()
                         Text(end.formatted(date: .abbreviated, time: .shortened)).font(.subheadline.weight(.semibold))
                     }
                 }
             }
         }
     }
-    
+
     private var nightly: some View {
         VStack(alignment: .leading, spacing: 8) {
             MFieldCard {
@@ -144,38 +146,39 @@ public struct StayTypeSelectionOrganism: View {
                         "City, Area or Property Name",
                         style: .caption,
                         color: .secondary
-                    );
-                    
+                    )
+
                     AText("Where to?", style: .headline)
                 }
             }
-            
+
             HStack(spacing: 12) {
                 MFieldCard {
                     VStack(alignment: .leading, spacing: 6) {
-                        AText("Check-in", style: .caption, color: .secondary);
+                        AText("Check-in", style: .caption, color: .secondary)
                         DatePicker(
                             "",
                             selection: Binding(
                                 get: {
                                     props.checkIn
-                                },set: {
-                                    props.checkIn = $0;
+                                }, set: {
+                                    props.checkIn = $0
                                     send(.setCheckIn($0))
                                 }
                             ),
-                            in: Date()..., displayedComponents: .date).labelsHidden()
+                            in: Date()..., displayedComponents: .date
+                        ).labelsHidden()
                     }
                 }
-                
+
                 MFieldCard {
                     VStack(alignment: .leading, spacing: 6) {
-                        AText("Check-out", style: .caption, color: .secondary);
+                        AText("Check-out", style: .caption, color: .secondary)
                         DatePicker(
                             "",
                             selection: Binding(
                                 get: { props.checkOut },
-                                set: { props.checkOut = $0;
+                                set: { props.checkOut = $0
                                     send(.setCheckOut($0))
                                 }
                             ),
@@ -185,7 +188,7 @@ public struct StayTypeSelectionOrganism: View {
                     }
                 }
             }
-            
+
             if props.checkOut <= props.checkIn {
                 Text("Checkout must be after check-in.")
                     .font(.footnote)
@@ -193,7 +196,7 @@ public struct StayTypeSelectionOrganism: View {
             }
         }
     }
-    
+
     private var minCheckoutDate: Date {
         Calendar.current.date(
             byAdding: .day,

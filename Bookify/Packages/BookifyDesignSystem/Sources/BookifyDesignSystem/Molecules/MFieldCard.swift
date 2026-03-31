@@ -12,7 +12,7 @@ public struct MFieldCard<Content: View>: View {
     public init(@ViewBuilder content: () -> Content) {
         self.content = content()
     }
-    
+
     public var body: some View {
         ASurface {
             content.frame(maxWidth: .infinity, alignment: .leading)

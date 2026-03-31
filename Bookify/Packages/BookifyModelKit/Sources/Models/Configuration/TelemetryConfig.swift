@@ -6,7 +6,7 @@
 //
 
 public struct TelemetryConfig: Codable, Equatable {
-    public let vendor: String                   // "Firebase","Segment","Amplitude"
+    public let vendor: String // "Firebase","Segment","Amplitude"
     public let apiKey: String?
-    public let samplingRate: Double?            // 0...1
+    public let samplingRate: Double? // 0...1
 }

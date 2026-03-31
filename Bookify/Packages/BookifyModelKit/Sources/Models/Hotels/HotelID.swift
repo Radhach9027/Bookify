@@ -9,7 +9,7 @@ import Foundation
 
 public struct HotelID: Hashable, Codable, Sendable, ExpressibleByStringLiteral, CustomStringConvertible {
     public let rawValue: String
-    public init(_ raw: String) { self.rawValue = raw }
-    public init(stringLiteral value: String) { self.rawValue = value }
+    public init(_ raw: String) { rawValue = raw }
+    public init(stringLiteral value: String) { rawValue = value }
     public var description: String { rawValue }
 }

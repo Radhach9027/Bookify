@@ -11,10 +11,10 @@ public struct BookifyAuthConfig: Sendable {
     public let authorizeURL: URL
     public let tokenURL: URL
     public let clientId: String
-    public let redirectScheme: String         // e.g. "bookify"
-    public let redirectURI: String            // e.g. "bookify://auth/callback"
-    public let scopes: String                 // e.g. "openid profile email offline_access"
-    public let prefersEphemeral: Bool         // SSO or ephemeral session
+    public let redirectScheme: String // e.g. "bookify"
+    public let redirectURI: String // e.g. "bookify://auth/callback"
+    public let scopes: String // e.g. "openid profile email offline_access"
+    public let prefersEphemeral: Bool // SSO or ephemeral session
 
     public init(
         authorizeURL: URL,

@@ -18,7 +18,7 @@ public struct HotelCardProps: Identifiable, Equatable {
     public var originalPrice: String
     public var description: String
     public var imageUrl: URL
-    
+
     public init(
         id: String,
         name: String,
@@ -31,29 +31,29 @@ public struct HotelCardProps: Identifiable, Equatable {
         description: String,
         imageUrl: URL
     ) {
-        self.id = id;
-        self.name = name;
-        self.city = city;
-        self.ratingText = ratingText;
-        self.ratingValue = ratingValue;
-        self.reviewsCountText = reviewsCountText;
-        self.priceText = priceText;
-        self.originalPrice = originalPrice;
-        self.description = description;
+        self.id = id
+        self.name = name
+        self.city = city
+        self.ratingText = ratingText
+        self.ratingValue = ratingValue
+        self.reviewsCountText = reviewsCountText
+        self.priceText = priceText
+        self.originalPrice = originalPrice
+        self.description = description
         self.imageUrl = imageUrl
     }
-    
+
     public static func == (lhs: HotelCardProps, rhs: HotelCardProps) -> Bool {
         return lhs.id == rhs.id &&
-        lhs.name == rhs.name &&
-        lhs.city == rhs.city &&
-        lhs.ratingText == rhs.ratingText &&
-        lhs.ratingValue == rhs.ratingValue &&
-        lhs.reviewsCountText == rhs.reviewsCountText &&
-        lhs.priceText == rhs.priceText &&
-        lhs.description == rhs.description &&
-        lhs.imageUrl == rhs.imageUrl &&
-        lhs.originalPrice == rhs.originalPrice
+            lhs.name == rhs.name &&
+            lhs.city == rhs.city &&
+            lhs.ratingText == rhs.ratingText &&
+            lhs.ratingValue == rhs.ratingValue &&
+            lhs.reviewsCountText == rhs.reviewsCountText &&
+            lhs.priceText == rhs.priceText &&
+            lhs.description == rhs.description &&
+            lhs.imageUrl == rhs.imageUrl &&
+            lhs.originalPrice == rhs.originalPrice
     }
 }
 
@@ -77,7 +77,7 @@ public struct HotelCard: View {
         self.onWishlist = onWishlist
         self.onShare = onShare
     }
-    
+
     public var body: some View {
         let cardShape = RoundedRectangle(cornerRadius: 18, style: .continuous)
 
@@ -90,7 +90,7 @@ public struct HotelCard: View {
                         LinearGradient(
                             gradient: Gradient(colors: [
                                 Color.black.opacity(0.0),
-                                Color.black.opacity(0.45)
+                                Color.black.opacity(0.45),
                             ]),
                             startPoint: .top,
                             endPoint: .bottom
@@ -156,4 +156,3 @@ private struct CardWidth: ViewModifier {
         }
     }
 }
-

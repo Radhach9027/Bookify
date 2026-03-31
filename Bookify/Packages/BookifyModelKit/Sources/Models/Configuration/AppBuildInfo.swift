@@ -8,13 +8,13 @@
 import Foundation
 
 public struct AppBuildInfo: Codable, Equatable, Sendable {
-    public let appVersion: String        // CFBundleShortVersionString
-    public let buildNumber: String       // CFBundleVersion
-    public let osName: String            // "iOS"
-    public let osVersion: String         // UIDevice.current.systemVersion
-    public let deviceModel: String       // e.g. "iPhone 15 Pro"
-    public let locale: String            // e.g. "en_IN"
-    public let timeZone: String          // e.g. "Asia/Kolkata"
+    public let appVersion: String // CFBundleShortVersionString
+    public let buildNumber: String // CFBundleVersion
+    public let osName: String // "iOS"
+    public let osVersion: String // UIDevice.current.systemVersion
+    public let deviceModel: String // e.g. "iPhone 15 Pro"
+    public let locale: String // e.g. "en_IN"
+    public let timeZone: String // e.g. "Asia/Kolkata"
 
     public init(
         appVersion: String,

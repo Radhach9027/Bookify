@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  UserEntity.swift
 //  BookifyModelKit
 //
 //  Created by radha chilamkurthy on 03/11/25.
@@ -25,7 +25,6 @@ struct UserPreferencesEntity: Hashable, Sendable, Codable {
     var theme: String
     var notificationsEnabled: Bool
 }
-
 
 extension UserEntity {
     func toModel() -> UserModel {

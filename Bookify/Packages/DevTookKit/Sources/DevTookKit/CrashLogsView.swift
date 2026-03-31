@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CrashLogsView: View {
     @State private var logs: String = "Loading…"
-    
+
     var body: some View {
         ScrollView {
             Text(logs)
@@ -18,7 +18,7 @@ struct CrashLogsView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
         .onAppear {
-            //logs = CrashLogReader.shared.read()
+            // logs = CrashLogReader.shared.read()
         }
     }
 }

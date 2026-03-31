@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct EnvironmentView: View {
-
     var body: some View {
         Text("EnvironmentView")
     }
 }
-

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  PricingModel.swift
 //  BookifyModelKit
 //
 //  Created by radha chilamkurthy on 05/11/25.

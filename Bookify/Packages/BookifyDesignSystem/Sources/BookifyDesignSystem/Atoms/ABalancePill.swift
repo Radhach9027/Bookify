@@ -1,5 +1,5 @@
 //
-//  BalancePill.swift
+//  ABalancePill.swift
 //  MyHotels
 //
 //  Created by radha chilamkurthy on 23/10/25.
@@ -22,4 +22,3 @@ struct ABalancePill: View {
         .overlay(Capsule().stroke(Color.gray.opacity(0.25), lineWidth: 0.5))
     }
 }
-

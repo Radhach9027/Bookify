@@ -14,14 +14,14 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "BookifyModelKit", path: "../BookifyModelKit"),
-        .package(url: "https://github.com/Radhach9027/NetworkClient", branch: "main")
+        .package(url: "https://github.com/Radhach9027/NetworkClient", branch: "main"),
     ],
     targets: [
         .target(
             name: "BookifyDomainKit",
             dependencies: [
                 .product(name: "NetworkClient", package: "NetworkClient"),
-                .product(name: "BookifyModelKit", package: "BookifyModelKit")
+                .product(name: "BookifyModelKit", package: "BookifyModelKit"),
             ],
             resources: [.process("Resources")]
         ),

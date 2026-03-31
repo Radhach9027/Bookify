@@ -23,8 +23,6 @@ public final class BookifyDomain {
 
     private init() {
         let repo = HotelRepositoryImpl(session: BookifyDomain.client)
-        self.hotelsUseCase = FetchHotelsUseCase(repository: repo)
+        hotelsUseCase = FetchHotelsUseCase(repository: repo)
     }
 }
-
-

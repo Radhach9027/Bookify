@@ -14,15 +14,15 @@ public final class EventState<E: AppEvent> {
     private let bus: EventBusType
     private let subject = PassthroughSubject<E, Never>()
 
-    public private(set) var wrappedValue: E? = nil {
-        didSet { if let v = wrappedValue { subject.send(v) } }
+    public private(set) var wrappedValue: E? {
+        didSet { if let value = wrappedValue { subject.send(value) } }
     }
 
     public var projectedValue: AnyPublisher<E, Never> { subject.eraseToAnyPublisher() }
 
     public init(bus: EventBusType) {
         self.bus = bus
-        self.cancellable = bus.publisher(E.self)
+        cancellable = bus.publisher(E.self)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in self?.wrappedValue = $0 }
     }

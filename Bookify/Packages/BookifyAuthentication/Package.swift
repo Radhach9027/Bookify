@@ -17,7 +17,7 @@ let package = Package(
         .target(
             name: "BookifyAuthentication",
             dependencies: [
-                .product(name: "BookifySharedSystem", package: "BookifySharedSystem")
+                .product(name: "BookifySharedSystem", package: "BookifySharedSystem"),
             ]
         ),
         .testTarget(

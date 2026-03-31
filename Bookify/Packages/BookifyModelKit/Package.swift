@@ -2,6 +2,7 @@
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
+
 let package = Package(
     name: "BookifyModelKit",
     platforms: [.iOS(.v15)],
@@ -12,7 +13,7 @@ let package = Package(
         .target(
             name: "BookifyModelKit",
             path: "Sources/Models",
-            sources: ["Hotels","Places", "Configuration"]
+            sources: ["Hotels", "Places", "Configuration"]
         ),
         .testTarget(
             name: "BookifyModelKitTests",
@@ -20,5 +21,3 @@ let package = Package(
         ),
     ]
 )
-
-

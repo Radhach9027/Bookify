@@ -15,10 +15,9 @@ public struct AppDetailTopBarConfig {
     }
 }
 
-
 public struct AppDetailTopBarModifier: ViewModifier {
     let config: AppDetailTopBarConfig
-    
+
     public func body(content: Content) -> some View {
         content
             .navigationBarBackButtonHidden(false)

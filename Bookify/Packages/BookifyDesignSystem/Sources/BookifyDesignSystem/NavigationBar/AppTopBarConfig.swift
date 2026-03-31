@@ -21,7 +21,7 @@ public struct AppTopBarConfig {
         locationName: String = "Hyderabad",
         locationSymbol: String = "mappin.and.ellipse",
         onLocationTap: @escaping () -> Void,
-        onWallet: @escaping () -> Void,
+        onWallet: @escaping () -> Void
     ) {
         self.title = title
         self.balance = balance

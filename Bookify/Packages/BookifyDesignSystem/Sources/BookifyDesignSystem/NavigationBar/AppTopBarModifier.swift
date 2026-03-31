@@ -1,5 +1,5 @@
 //
-//  AppTopBarChrome.swift
+//  AppTopBarModifier.swift
 //  BookifyDesignSystem
 //
 //  Created by radha chilamkurthy on 14/11/25.
@@ -9,7 +9,7 @@ import SwiftUI
 
 public struct AppTopBarModifier: ViewModifier {
     let config: AppTopBarConfig
-    
+
     public func body(content: Content) -> some View {
         content
             .navigationBarTitleDisplayMode(.inline)
@@ -42,4 +42,3 @@ public struct AppTopBarModifier: ViewModifier {
             }
     }
 }
-

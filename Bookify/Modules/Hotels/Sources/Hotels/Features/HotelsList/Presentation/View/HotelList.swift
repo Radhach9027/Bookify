@@ -1,12 +1,12 @@
 //
-//  Hotels.swift
+//  HotelList.swift
 //  Hotels
 //
 //  Created by radha chilamkurthy on 14/11/25.
 //
 
-import SwiftUI
 import BookifyDesignSystem
+import SwiftUI
 
 struct HotelList: View {
     @StateObject private var viewModel = HotelsViewModel()
@@ -39,4 +39,3 @@ struct HotelList: View {
         }
     }
 }
-

@@ -5,15 +5,15 @@
 //  Created by radha chilamkurthy on 07/11/25.
 //
 
-import SwiftUI
 import NavigatorKit
+import SwiftUI
 
 enum HotelRoutes: RoutableFeature {
-    static var routes: [String : AnyView] {
+    static var routes: [String: AnyView] {
         [
             "/hotelsDashBoard": AnyView(HotelsDashBoard()),
             "hotelList": AnyView(HotelList()),
-            "/hotel/detail": AnyView(HotelDetailPage())
+            "/hotel/detail": AnyView(HotelDetailPage()),
         ]
     }
 }

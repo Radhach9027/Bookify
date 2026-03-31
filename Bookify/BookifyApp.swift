@@ -5,10 +5,10 @@
 //  Created by radha chilamkurthy on 03/11/25.
 //
 
-import SwiftUI
+import BookifyDesignSystem
 import Combine
 import NavigatorKit
-import BookifyDesignSystem
+import SwiftUI
 
 @main
 struct BookifyApp: App {

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  ReviewSummary.swift
 //  BookifyModelKit
 //
 //  Created by radha chilamkurthy on 05/11/25.
@@ -8,12 +8,12 @@
 import Foundation
 
 public struct ReviewSummary: Hashable, Codable, Sendable {
-    public var rating: Double?      // average rating on `scale`
-    public var scale: Double?       // 5 or 10
-    public var count: Int?          // total number of reviews
+    public var rating: Double? // average rating on `scale`
+    public var scale: Double? // 5 or 10
+    public var count: Int? // total number of reviews
 
     // Optional distribution, e.g., buckets 1..5 → counts
-    public var histogram: [Int:Int]?   // key = star (1..5), value = count
+    public var histogram: [Int: Int]? // key = star (1..5), value = count
 
     // Recent snippet to display quickly (title or message of a recent good review)
     public var recentSnippet: String?
@@ -26,15 +26,15 @@ public struct ReviewSummary: Hashable, Codable, Sendable {
         rating: Double? = nil,
         scale: Double? = 5,
         count: Int? = nil,
-        histogram: [Int:Int]? = nil,
+        histogram: [Int: Int]? = nil,
         recentSnippet: String? = nil,
         topPositiveReviewID: String? = nil,
         topNegativeReviewID: String? = nil
     ) {
-        self.rating = rating;
-        self.scale = scale;
+        self.rating = rating
+        self.scale = scale
         self.count = count
-        self.histogram = histogram;
+        self.histogram = histogram
         self.recentSnippet = recentSnippet
         self.topPositiveReviewID = topPositiveReviewID
         self.topNegativeReviewID = topNegativeReviewID
@@ -45,4 +45,3 @@ public struct ReviewSummary: Hashable, Codable, Sendable {
         return rating / scale * 5.0
     }
 }
-

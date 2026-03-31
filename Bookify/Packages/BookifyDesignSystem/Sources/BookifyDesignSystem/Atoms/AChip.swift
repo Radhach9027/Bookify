@@ -10,12 +10,12 @@ import SwiftUI
 public struct AChip: View {
     public struct Props: Equatable { let title: String; let selected: Bool }
     let props: Props; let onTap: () -> Void
-    
+
     public init(_ props: Props, onTap: @escaping () -> Void) {
-        self.props = props;
+        self.props = props
         self.onTap = onTap
     }
-    
+
     public var body: some View {
         Button(action: onTap) {
             Text(props.title).font(.subheadline.weight(.semibold))
