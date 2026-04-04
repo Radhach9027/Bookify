@@ -16,6 +16,11 @@
 		A25E74FD2EBCB51800ECED7A /* BookifySharedSystem in Frameworks */ = {isa = PBXBuildFile; productRef = A25E74FC2EBCB51800ECED7A /* BookifySharedSystem */; };
 		A26250D52EB8842A0091F8A1 /* BookifyDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = A26250D42EB8842A0091F8A1 /* BookifyDesignSystem */; };
 		A26250D82EB884920091F8A1 /* BookifyDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = A26250D72EB884920091F8A1 /* BookifyDesignSystem */; };
+		A28F95042F80E7A2001DE4D2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A28F95032F80E7A2001DE4D2 /* FirebaseAnalytics */; };
+		A28F95062F80E7A2001DE4D2 /* FirebaseAnalyticsCore in Frameworks */ = {isa = PBXBuildFile; productRef = A28F95052F80E7A2001DE4D2 /* FirebaseAnalyticsCore */; };
+		A28F95082F80E7A2001DE4D2 /* FirebaseAnalyticsIdentitySupport in Frameworks */ = {isa = PBXBuildFile; productRef = A28F95072F80E7A2001DE4D2 /* FirebaseAnalyticsIdentitySupport */; };
+		A28F950A2F80E7A2001DE4D2 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = A28F95092F80E7A2001DE4D2 /* FirebaseCore */; };
+		A28F950D2F80E822001DE4D2 /* BookifyTelemetryKit in Frameworks */ = {isa = PBXBuildFile; productRef = A28F950C2F80E822001DE4D2 /* BookifyTelemetryKit */; };
 		A2B1AA862EC70AFC0011DC0A /* NavigatorKit in Frameworks */ = {isa = PBXBuildFile; productRef = A2B1AA852EC70AFC0011DC0A /* NavigatorKit */; };
 		A2B1AAC42EC983510011DC0A /* NavigatorKit in Frameworks */ = {isa = PBXBuildFile; productRef = A2B1AAC32EC983510011DC0A /* NavigatorKit */; };
 		B0013DDC2EEBDEF300B74090 /* ARCHITECTURE-BOOKIFY.md in Resources */ = {isa = PBXBuildFile; fileRef = B0013DDB2EEBDEF300B74090 /* ARCHITECTURE-BOOKIFY.md */; };
@@ -101,11 +106,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A25E74782EBB5B4800ECED7A /* Bookings in Frameworks */,
+				A28F95082F80E7A2001DE4D2 /* FirebaseAnalyticsIdentitySupport in Frameworks */,
+				A28F950D2F80E822001DE4D2 /* BookifyTelemetryKit in Frameworks */,
 				A2B1AAC42EC983510011DC0A /* NavigatorKit in Frameworks */,
 				A2B1AA862EC70AFC0011DC0A /* NavigatorKit in Frameworks */,
+				A28F950A2F80E7A2001DE4D2 /* FirebaseCore in Frameworks */,
 				A26250D52EB8842A0091F8A1 /* BookifyDesignSystem in Frameworks */,
 				A25E74FD2EBCB51800ECED7A /* BookifySharedSystem in Frameworks */,
 				A25090D62EC230680054C8A1 /* BookifyDomainKit in Frameworks */,
+				A28F95042F80E7A2001DE4D2 /* FirebaseAnalytics in Frameworks */,
+				A28F95062F80E7A2001DE4D2 /* FirebaseAnalyticsCore in Frameworks */,
 				A26250D82EB884920091F8A1 /* BookifyDesignSystem in Frameworks */,
 				A25E747B2EBB7D0000ECED7A /* DependencyContainer in Frameworks */,
 				A25E74742EBB5A6900ECED7A /* Hotels in Frameworks */,
@@ -187,6 +197,11 @@
 				A25090D52EC230680054C8A1 /* BookifyDomainKit */,
 				A2B1AA852EC70AFC0011DC0A /* NavigatorKit */,
 				A2B1AAC32EC983510011DC0A /* NavigatorKit */,
+				A28F95032F80E7A2001DE4D2 /* FirebaseAnalytics */,
+				A28F95052F80E7A2001DE4D2 /* FirebaseAnalyticsCore */,
+				A28F95072F80E7A2001DE4D2 /* FirebaseAnalyticsIdentitySupport */,
+				A28F95092F80E7A2001DE4D2 /* FirebaseCore */,
+				A28F950C2F80E822001DE4D2 /* BookifyTelemetryKit */,
 			);
 			productName = Bookify;
 			productReference = A26250A72EB883770091F8A1 /* Bookify.app */;
@@ -278,6 +293,8 @@
 				A25E74FB2EBCB51800ECED7A /* XCLocalSwiftPackageReference "Bookify/Packages/BookifySharedSystem" */,
 				A25090D42EC230680054C8A1 /* XCLocalSwiftPackageReference "Bookify/Packages/BookifyDomainKit" */,
 				A2B1AAC22EC983510011DC0A /* XCRemoteSwiftPackageReference "NavigatorKit" */,
+				A28F95022F80E7A2001DE4D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A28F950B2F80E822001DE4D2 /* XCLocalSwiftPackageReference "Bookify/Packages/BookifyTelemetryKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A26250A82EB883770091F8A1 /* Products */;
@@ -488,7 +505,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A9Q63V8DW7;
+				DEVELOPMENT_TEAM = 5D3F6TU62C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -520,7 +537,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A9Q63V8DW7;
+				DEVELOPMENT_TEAM = 5D3F6TU62C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -691,6 +708,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Bookify/Packages/BookifySharedSystem;
 		};
+		A28F950B2F80E822001DE4D2 /* XCLocalSwiftPackageReference "Bookify/Packages/BookifyTelemetryKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Bookify/Packages/BookifyTelemetryKit;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -700,6 +721,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.5;
+			};
+		};
+		A28F95022F80E7A2001DE4D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.11.0;
 			};
 		};
 		A2B1AAC22EC983510011DC0A /* XCRemoteSwiftPackageReference "NavigatorKit" */ = {
@@ -745,6 +774,30 @@
 		A26250D72EB884920091F8A1 /* BookifyDesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BookifyDesignSystem;
+		};
+		A28F95032F80E7A2001DE4D2 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A28F95022F80E7A2001DE4D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		A28F95052F80E7A2001DE4D2 /* FirebaseAnalyticsCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A28F95022F80E7A2001DE4D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsCore;
+		};
+		A28F95072F80E7A2001DE4D2 /* FirebaseAnalyticsIdentitySupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A28F95022F80E7A2001DE4D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsIdentitySupport;
+		};
+		A28F95092F80E7A2001DE4D2 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A28F95022F80E7A2001DE4D2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		A28F950C2F80E822001DE4D2 /* BookifyTelemetryKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BookifyTelemetryKit;
 		};
 		A2B1AA852EC70AFC0011DC0A /* NavigatorKit */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -5,10 +5,8 @@
 //  Created by Radha Chandan on 03/04/26.
 //
 
-/*
- 
-TODO: Use when u have FirebaseAnalytics implemented
- import Foundation
+
+  import Foundation
  import FirebaseAnalytics
 
  public struct FirebaseTelemetryProvider: TelemetryProvider {
@@ -33,4 +31,3 @@ TODO: Use when u have FirebaseAnalytics implemented
          Analytics.logEvent(payload.eventName, parameters: payload.parameters)
      }
  }
-*/
