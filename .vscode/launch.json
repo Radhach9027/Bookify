@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Open Simulator",
+      "type": "shell",
+      "command": "open",
+      "args": ["-a", "Simulator"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Build Bookify",
+      "type": "shell",
+      "command": "xcodebuild",
+      "args": [
+        "-project",
+        "Bookify.xcodeproj",
+        "-scheme",
+        "Bookify",
+        "-destination",
+        "platform=iOS Simulator,name=iPhone 17 Pro",
+        "build"
+      ],
+      "dependsOn": "Open Simulator",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
